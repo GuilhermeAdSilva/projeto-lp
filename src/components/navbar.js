@@ -22,17 +22,46 @@ function Navbar(props) {
           <span className='navbar-toggler-icon'></span>
         </button>
         <div className='collapse navbar-collapse' id='navbarResponsive'>
+
+
           <ul className='navbar-nav'>
-            <NavbarItem
-              render='true'
-              href='/listagem-torneios'
-              label='Torneios'
-            />
+            <NavbarItem render='true' href='/listagem-torneios' label='Torneios' />
           </ul>
           <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-cursos' label='Times' />
+            <NavbarItem render='true' href='/listagem-associacoes' label='Associacoes Esportivas' />
           </ul>
-          
+{/*
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-jogadores' label='Jogadores' />
+          </ul>
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-presidentes' label='Presidentes' />
+          </ul>
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-tecnicos' label='Tecnicos' />
+          </ul>
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-arbitros' label='Arbitros' />
+          </ul>
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-equipe' label='Equipes' />
+          </ul>
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-edicao-torneios' label='Competicões' />
+          </ul>
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-inscricao' label='Inscricoes' />
+          </ul>
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-partidas' label='Partidas' />
+          </ul>
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-rodadas' label='Rodadas' />
+          </ul>
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-resultados' label='Resultados' />
+          </ul>
+*/}
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/login' label='Entrar' />
           </ul>
