@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Teste from './components/Teste';
+import Navbar from './components/navbar';
+import Rotas from './rotas';
 
 function App() {
   return (
     <div className="App">
-      <Teste />
+      <Rotas />
+      <Navbar />
     </div>
   );
 }
