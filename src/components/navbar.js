@@ -44,13 +44,13 @@ function Navbar(props) {
             <NavbarItem render='true' href='/listagem-arbitros' label='Arbitros' />
           </ul>
           <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-equipe' label='Equipes' />
+            <NavbarItem render='true' href='/listagem-equipes' label='Equipes' />
           </ul>
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-edicao-torneios' label='Competicões' />
           </ul>
           <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-inscricao' label='Inscricoes' />
+            <NavbarItem render='true' href='/listagem-inscricoes' label='Inscricoes' />
           </ul>
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-partidas' label='Partidas' />

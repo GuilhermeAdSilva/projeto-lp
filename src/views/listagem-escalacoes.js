@@ -1,4 +1,4 @@
-function ListagemEscalacoess() {
+function ListagemEscalacoes() {
   return(
     <div></div>
   )
