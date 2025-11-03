@@ -30,6 +30,10 @@ function Navbar(props) {
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-associacoes' label='Associacoes Esportivas' />
           </ul>
+
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-arbitros' label='Arbitros' />
+          </ul>
 {/*
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-jogadores' label='Jogadores' />
@@ -40,9 +44,7 @@ function Navbar(props) {
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-tecnicos' label='Tecnicos' />
           </ul>
-          <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-arbitros' label='Arbitros' />
-          </ul>
+          
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-equipes' label='Equipes' />
           </ul>
