@@ -28,13 +28,13 @@ function Navbar(props) {
             <NavbarItem render='true' href='/listagem-torneios' label='Torneios' />
           </ul>
           <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-associacoes' label='Associacoes Esportivas' />
+            <NavbarItem render='true' href='/listagem-associacoes-esportivas' label='Associacoes Esportivas' />
           </ul>
 
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-arbitros' label='Arbitros' />
           </ul>
-{/*
+
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-jogadores' label='Jogadores' />
           </ul>
@@ -49,7 +49,7 @@ function Navbar(props) {
             <NavbarItem render='true' href='/listagem-equipes' label='Equipes' />
           </ul>
           <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-edicao-torneios' label='Competicões' />
+            <NavbarItem render='true' href='/listagem-competicoes' label='Competicões' />
           </ul>
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-inscricoes' label='Inscricoes' />
@@ -63,7 +63,23 @@ function Navbar(props) {
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-resultados' label='Resultados' />
           </ul>
-*/}
+
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-escalacoes' label='Escalacoes' />
+          </ul>
+
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-cartoes' label='Cartoes' />
+          </ul>
+
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-gols' label='Gols' />
+          </ul>
+
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-assistencias' label='Assistencias' />
+          </ul>
+
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/login' label='Entrar' />
           </ul>

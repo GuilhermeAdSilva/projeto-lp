@@ -3,7 +3,7 @@ import React from 'react';
 
 import ListagemArbitros from './views/listagem-arbitros';
 import ListagemAssistencias from './views/listagem-assistencias';
-import ListagemAssocicacoesEsportivas from './views/listagem-associacoes-esportivas';
+import ListagemAssociacoesEsportivas from './views/listagem-associacoes-esportivas';
 import ListagemCartoes from './views/listagem-cartoes';
 import ListagemCompeticoes from './views/listagem-competicoes';
 import ListagemEquipes from './views/listagem-equipes';
@@ -41,7 +41,7 @@ function Rotas(props) {
         <Route path='/listagem-assistencias' element={<ListagemAssistencias />} />
       </Routes>
       <Routes>
-        <Route path='/listagem-associacoesEsportivas' element={<ListagemAssocicacoesEsportivas />} />
+        <Route path='/listagem-associacoes-esportivas' element={<ListagemAssociacoesEsportivas />} />
       </Routes>
       <Routes>
         <Route path='/listagem-cartoes' element={<ListagemCartoes />} />

@@ -40,7 +40,7 @@ function ListagemAssociacoesEsportivas() {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(function (response) {
-        mensagemSucesso(`Curso excluído com sucesso!`);
+        mensagemSucesso(`Arbitro excluído com sucesso!`);
         setDados(
           dados.filter((dado) => {
             return dado.id !== id;
@@ -48,7 +48,7 @@ function ListagemAssociacoesEsportivas() {
         );
       })
       .catch(function (error) {
-        mensagemErro(`Erro ao excluir o curso`);
+        mensagemErro(`Erro ao excluir o arbitro`);
       });
   }
 
@@ -62,7 +62,7 @@ function ListagemAssociacoesEsportivas() {
 
   return (
     <div className='container'>
-      <Card title='Listagem de Cursos'>
+      <Card title='Listagem de Arbitros'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -71,7 +71,7 @@ function ListagemAssociacoesEsportivas() {
                 className='btn btn-warning'
                 onClick={() => cadastrar()}
               >
-                Novo Curso
+                Novo Arbitro
               </button>
               <table className='table table-hover'>
                 <thead>
@@ -113,4 +113,3 @@ function ListagemAssociacoesEsportivas() {
 }
 
 export default ListagemAssociacoesEsportivas;
-
