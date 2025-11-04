@@ -62,7 +62,7 @@ function ListagemTecnicos() {
 
   return (
     <div className='container'>
-      <Card title='Listagem de Arbitros'>
+      <Card title='Listagem de Tecnicos'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -71,7 +71,7 @@ function ListagemTecnicos() {
                 className='btn btn-warning'
                 onClick={() => cadastrar()}
               >
-                Novo Arbitro
+                Novo Técnico
               </button>
               <table className='table table-hover'>
                 <thead>
@@ -85,7 +85,7 @@ function ListagemTecnicos() {
                     <tr key={dado.id}>
                       <td>{dado.nome}</td>
                       <td>
-                        <Stack spacing={1} padding={0} direction='row'>
+                        <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton
                             aria-label='edit'
                             onClick={() => editar(dado.id)}

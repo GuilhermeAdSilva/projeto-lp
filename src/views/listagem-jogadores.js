@@ -71,7 +71,7 @@ function ListagemJogadores() {
                 className='btn btn-warning'
                 onClick={() => cadastrar()}
               >
-                Novo Arbitro
+                Novo Jogador
               </button>
               <table className='table table-hover'>
                 <thead>
@@ -85,7 +85,7 @@ function ListagemJogadores() {
                     <tr key={dado.id}>
                       <td>{dado.nome}</td>
                       <td>
-                        <Stack spacing={1} padding={0} direction='row'>
+                        <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton
                             aria-label='edit'
                             onClick={() => editar(dado.id)}

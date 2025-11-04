@@ -62,7 +62,7 @@ function ListagemInscricoes() {
 
   return (
     <div className='container'>
-      <Card title='Listagem de Arbitros'>
+      <Card title='Listagem de Inscrições'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -71,21 +71,23 @@ function ListagemInscricoes() {
                 className='btn btn-warning'
                 onClick={() => cadastrar()}
               >
-                Novo Arbitro
+                Nova Inscrição
               </button>
               <table className='table table-hover'>
                 <thead>
                   <tr>
-                    <th scope='col'>ID</th>
+                    <th scope='col'>ID Time</th>
+                    <th scope='col'>ID Competição</th>
                     <th scope='col'>Ações</th>
                   </tr>
                 </thead>
                 <tbody>
                   {dados.map((dado) => (
                     <tr key={dado.id}>
-                      <td>{dado.id}</td>
+                      <td>{dado.idEquipe}</td>
+                      <td>{dado.idEdicaoTorneio}</td>
                       <td>
-                        <Stack spacing={1} padding={0} direction='row'>
+                        <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton
                             aria-label='edit'
                             onClick={() => editar(dado.id)}

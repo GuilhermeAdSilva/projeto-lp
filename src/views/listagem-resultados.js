@@ -62,7 +62,7 @@ function ListagemResultados() {
 
   return (
     <div className='container'>
-      <Card title='Listagem de Arbitros'>
+      <Card title='Listagem de Resultados'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -71,21 +71,26 @@ function ListagemResultados() {
                 className='btn btn-warning'
                 onClick={() => cadastrar()}
               >
-                Novo Arbitro
+                Novo Resultado
               </button>
               <table className='table table-hover'>
                 <thead>
                   <tr>
                     <th scope='col'>ID</th>
-                    <th scope='col'>Ações</th>
+                    <th scope='col'>ID Partida</th>
+                    <th scope='col'>Gols Time Mandante</th>
+                    <th scope='col'>Gols Time Visaitante</th>
                   </tr>
                 </thead>
                 <tbody>
                   {dados.map((dado) => (
                     <tr key={dado.id}>
                       <td>{dado.id}</td>
+                      <td>{dado.idPartida}</td>
+                      <td>{dado.golCasa}</td>
+                      <td>{dado.golVisitante}</td>
                       <td>
-                        <Stack spacing={1} padding={0} direction='row'>
+                        <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton
                             aria-label='edit'
                             onClick={() => editar(dado.id)}

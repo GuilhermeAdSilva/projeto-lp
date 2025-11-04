@@ -16,7 +16,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import axios from 'axios';
 import { BASE_URL3 } from '../config/axios';
 
-const baseURL = `${BASE_URL3}/inscricao`;
+const baseURL = `${BASE_URL3}/partida`;
 
 function ListagemPartidas() {
   const navigate = useNavigate();
@@ -62,7 +62,7 @@ function ListagemPartidas() {
 
   return (
     <div className='container'>
-      <Card title='Listagem de Arbitros'>
+      <Card title='Listagem de Partidas'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -71,12 +71,14 @@ function ListagemPartidas() {
                 className='btn btn-warning'
                 onClick={() => cadastrar()}
               >
-                Novo Arbitro
+                Nova Partida
               </button>
               <table className='table table-hover'>
                 <thead>
                   <tr>
-                    <th scope='col'>ID</th>
+                    <th scope='col'>ID Competição</th>
+                    <th scope='col'>ID Time Mandante</th>
+                    <th scope='col'>ID Time Visitante</th>
                     <th scope='col'>Ações</th>
                   </tr>
                 </thead>
@@ -84,8 +86,10 @@ function ListagemPartidas() {
                   {dados.map((dado) => (
                     <tr key={dado.id}>
                       <td>{dado.id}</td>
+                      <td>{dado.idAssociacaoMandante}</td>
+                      <td>{dado.idAssociacaoVisitante}</td>
                       <td>
-                        <Stack spacing={1} padding={0} direction='row'>
+                        <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton
                             aria-label='edit'
                             onClick={() => editar(dado.id)}

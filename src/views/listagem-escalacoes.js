@@ -85,7 +85,7 @@ function ListagemEscalacoes() {
                     <tr key={dado.id}>
                       <td>{dado.id}</td>
                       <td>
-                        <Stack spacing={1} padding={0} direction='row'>
+                        <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton
                             aria-label='edit'
                             onClick={() => editar(dado.id)}

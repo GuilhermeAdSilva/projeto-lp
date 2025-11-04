@@ -62,7 +62,7 @@ function ListagemRodadas() {
 
   return (
     <div className='container'>
-      <Card title='Listagem de Arbitros'>
+      <Card title='Listagem de Rodadas'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -71,7 +71,7 @@ function ListagemRodadas() {
                 className='btn btn-warning'
                 onClick={() => cadastrar()}
               >
-                Novo Arbitro
+                Nova rodada
               </button>
               <table className='table table-hover'>
                 <thead>
@@ -85,7 +85,7 @@ function ListagemRodadas() {
                     <tr key={dado.id}>
                       <td>{dado.quantidade}</td>
                       <td>
-                        <Stack spacing={1} padding={0} direction='row'>
+                        <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton
                             aria-label='edit'
                             onClick={() => editar(dado.id)}
