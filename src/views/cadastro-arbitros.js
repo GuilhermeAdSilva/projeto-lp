@@ -18,34 +18,39 @@ function CadastroArbitros() {
 
   const navigate = useNavigate();
 
-  const baseURL = `${BASE_URL}/arbitro`;
+  const baseURL = `${BASE_URL}/arbitros`;
 
   const [id, setId] = useState('');
   const [nome, setNome] = useState('');
-  const [cpf, setCpf] = useState('');
+  const [sexo, setSexo] = useState('');
   const [email, setEmail] = useState('');
-  const [celular, setCelular] = useState('');
-
+  const [telefone, setTelefone] = useState('');
+  const [senha, setSenha] = useState('');
+  const [confirmacaoSenha, setConfirmacaoSenha] = useState('');
   const [dados, setDados] = React.useState([]);
 
   function inicializar() {
     if (idParam == null) {
       setId('');
       setNome('');
-      setCpf('');
+      setSexo('');
       setEmail('');
-      setCelular('');
+      setTelefone('');
+      setSenha('');
+      setConfirmacaoSenha('');
     } else {
       setId(dados.id);
       setNome(dados.nome);
-      setCpf(dados.cpf);
+      setSexo(dados.sexo);
       setEmail(dados.email);
-      setCelular(dados.celular);
+      setTelefone(dados.telefone);
+      setSenha(dados.senha);
+      setConfirmacaoSenha(dados.confirmacaoSenha);
     }
   }
 
   async function salvar() {
-    let data = { id, nome, cpf, email, celular };
+    let data = { id, nome, sexo, email, telefone, senha, confirmacaoSenha };
     data = JSON.stringify(data);
     if (idParam == null) {
       await axios
@@ -65,8 +70,8 @@ function CadastroArbitros() {
           headers: { 'Content-Type': 'application/json' },
         })
         .then(function (response) {
-          mensagemSucesso(`Professor ${nome} alterado com sucesso!`);
-          navigate(`/listagem-professores`);
+          mensagemSucesso(`Arbitro ${nome} alterado com sucesso!`);
+          navigate(`/listagem-arbitros`);
         })
         .catch(function (error) {
           mensagemErro(error.response.data);
@@ -75,14 +80,18 @@ function CadastroArbitros() {
   }
 
   async function buscar() {
-    await axios.get(`${baseURL}/${idParam}`).then((response) => {
-      setDados(response.data);
-    });
-    setId(dados.id);
-    setNome(dados.nome);
-    setCpf(dados.cpf);
-    setEmail(dados.email);
-    setCelular(dados.celular);
+    if(idParam != null) {
+      await axios.get(`${baseURL}/${idParam}`).then((response) => {
+        setDados(response.data);
+      });
+      setId(dados.id);
+      setNome(dados.nome);
+      setSexo(dados.sexo);
+      setEmail(dados.email);
+      setTelefone(dados.telefone);
+      setSenha(dados.senha);
+      setConfirmacaoSenha(dados.confirmacaoSenha);
+    }
   }
 
   useEffect(() => {
@@ -93,7 +102,7 @@ function CadastroArbitros() {
 
   return (
     <div className='container'>
-      <Card title='Cadastro de Professor'>
+      <Card title='Cadastro de Arbitro'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -107,17 +116,6 @@ function CadastroArbitros() {
                   onChange={(e) => setNome(e.target.value)}
                 />
               </FormGroup>
-              <FormGroup label='CPF: *' htmlFor='inputCpf'>
-                <input
-                  type='text'
-                  maxLength='11'
-                  id='inputCpf'
-                  value={cpf}
-                  className='form-control'
-                  name='cpf'
-                  onChange={(e) => setCpf(e.target.value)}
-                />
-              </FormGroup>
               <FormGroup label='Email: *' htmlFor='inputEmail'>
                 <input
                   type='email'
@@ -128,16 +126,76 @@ function CadastroArbitros() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </FormGroup>
-              <FormGroup label='Celular:' htmlFor='inputCelular'>
+              
+              <FormGroup label='Senha: *' htmlFor='inputSenha'>
                 <input
-                  type='text'
-                  id='inputCelular'
-                  value={celular}
+                  type='password'
+                  id='inputSenha'
+                  value={senha}
                   className='form-control'
-                  name='celular'
-                  onChange={(e) => setCelular(e.target.value)}
+                  name='senha'
+                  onChange={(e) => setSenha(e.target.value)}
                 />
               </FormGroup>
+
+              <FormGroup label='Confirmação Senha: *' htmlFor='inputConfirmacaoSenha'>
+                <input
+                  type='password'
+                  id='inputConfirmacaoSenha'
+                  value={confirmacaoSenha}
+                  className='form-control'
+                  name='confirmacaoSenha'
+                  onChange={(e) => setConfirmacaoSenha(e.target.value)}
+                />
+              </FormGroup>
+
+              <FormGroup label='Telefone:' htmlFor='inputTelefone'>
+                <input
+                  type='text'
+                  id='inputTelefone'
+                  value={telefone}
+                  className='form-control'
+                  name='telefone'
+                  onChange={(e) => setTelefone(e.target.value)}
+                />
+              </FormGroup>
+              {/*<FormGroup label='Sexo: *' htmlFor='inputSexo'>
+                <input
+                  type='checkbox'
+                  maxLength='11'
+                  id='inputSexo'
+                  value={sexo}
+                  className='form-control'
+                  name='sexo'
+                  onChange={(e) => setSexo (e.target.value)}
+                />
+              </FormGroup>*/}
+            
+            <FormGroup>
+                  <input
+                    className='form-check-input'
+                    type='checkbox'
+                    checked={sexo}
+                    id='checkSexoF'
+                    name='feminino'
+                    onChange={(e) =>
+                      setSexo(e.target.checked)
+                    }
+                  />
+                  F
+                  <input
+                    className='form-check-input'
+                    type='checkbox'
+                    checked={sexo}
+                    id='checkSexoM'
+                    name='masculino'
+                    onChange={(e) =>
+                      setSexo(e.target.checked)
+                    }
+                  />
+                  M
+                </FormGroup>
+        
               <Stack spacing={1} padding={1} direction='row'>
                 <button
                   onClick={salvar}
