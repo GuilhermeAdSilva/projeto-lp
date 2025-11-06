@@ -22,7 +22,7 @@ function ListagemArbitros() {
   const navigate = useNavigate();
 
   const cadastrar = () => {
-    navigate(`/cadastro-cursos`);
+    navigate(`/cadastro-arbitros`);
   };
 
   const editar = (id) => {

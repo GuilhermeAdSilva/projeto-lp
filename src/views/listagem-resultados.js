@@ -80,6 +80,7 @@ function ListagemResultados() {
                     <th scope='col'>ID Partida</th>
                     <th scope='col'>Gols Time Mandante</th>
                     <th scope='col'>Gols Time Visaitante</th>
+                    <th scope='col'>Ações</th>
                   </tr>
                 </thead>
                 <tbody>

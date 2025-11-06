@@ -2,6 +2,8 @@ import React from 'react';
 
 
 import ListagemArbitros from './views/listagem-arbitros';
+import CadastroArbitros from './views/cadastro-arbitros';
+
 import ListagemAssistencias from './views/listagem-assistencias';
 import ListagemAssociacoesEsportivas from './views/listagem-associacoes-esportivas';
 import ListagemCartoes from './views/listagem-cartoes';
@@ -36,7 +38,9 @@ function Rotas(props) {
     <BrowserRouter>
       <Routes>
         <Route path='/listagem-arbitros' element={<ListagemArbitros />} />
+        <Route path='/cadastro-arbitros/:idParam?' element={<CadastroArbitros />}/>
       </Routes>
+
       <Routes>
         <Route path='/listagem-assistencias' element={<ListagemAssistencias />} />
       </Routes>
