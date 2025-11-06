@@ -38,6 +38,9 @@ function Rotas(props) {
     <BrowserRouter>
       <Routes>
         <Route path='/listagem-arbitros' element={<ListagemArbitros />} />
+      </Routes>
+      
+      <Routes>
         <Route path='/cadastro-arbitros/:idParam?' element={<CadastroArbitros />}/>
       </Routes>
 
