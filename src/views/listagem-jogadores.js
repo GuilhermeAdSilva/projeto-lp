@@ -22,7 +22,7 @@ function ListagemJogadores() {
   const navigate = useNavigate();
 
   const cadastrar = () => {
-    navigate(`/cadastro-cursos`);
+    navigate(`/cadastro-jogadores`);
   };
 
   const editar = (id) => {

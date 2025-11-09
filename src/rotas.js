@@ -4,6 +4,12 @@ import React from 'react';
 import ListagemArbitros from './views/listagem-arbitros';
 import CadastroArbitros from './views/cadastro-arbitros';
 
+import ListagemJogadores from './views/listagem-jogadores';
+import CadastroJogadores from './views/cadastro-jogadores';
+
+import ListagemTecnicos from './views/listagem-tecnicos';
+import CadastroTecnicos from './views/cadastro-tecnicos';
+
 import ListagemAssistencias from './views/listagem-assistencias';
 import ListagemAssociacoesEsportivas from './views/listagem-associacoes-esportivas';
 import ListagemCartoes from './views/listagem-cartoes';
@@ -12,12 +18,10 @@ import ListagemEquipes from './views/listagem-equipes';
 import ListagemEscalacoes from './views/listagem-escalacoes';
 import ListagemGols from './views/listagem-gols';
 import ListagemInscricoes from './views/listagem-inscricoes';
-import ListagemJogadores from './views/listagem-jogadores';
 import ListagemPartidas from './views/listagem-partidas';
 import ListagemPresidentes from './views/listagem-presidentes';
 import ListagemResultados from './views/listagem-resultados';
 import ListagemRodadas from './views/listagem-rodadas';
-import ListagemTecnicos from './views/listagem-tecnicos';
 import ListagemTorneios from './views/listagem-torneios';
 
 
@@ -38,10 +42,13 @@ function Rotas(props) {
     <BrowserRouter>
       <Routes>
         <Route path='/listagem-arbitros' element={<ListagemArbitros />} />
-      </Routes>
-      
-      <Routes>
         <Route path='/cadastro-arbitros/:idParam?' element={<CadastroArbitros />}/>
+
+        <Route path='/listagem-jogadores' element={<ListagemJogadores />} />
+        <Route path='/cadastro-jogadores/:idParam?' element={<CadastroJogadores />}/>
+
+        <Route path='/listagem-tecnicos' element={<ListagemTecnicos />} />
+        <Route path='/cadastro-tecnicos/:idParam?' element={<CadastroTecnicos />}/>
       </Routes>
 
       <Routes>
@@ -69,9 +76,6 @@ function Rotas(props) {
         <Route path='/listagem-inscricoes' element={<ListagemInscricoes />} />
       </Routes>
       <Routes>
-        <Route path='/listagem-jogadores' element={<ListagemJogadores />} />
-      </Routes>
-      <Routes>
         <Route path='/listagem-partidas' element={<ListagemPartidas />} />
       </Routes>
       <Routes>
@@ -82,9 +86,6 @@ function Rotas(props) {
       </Routes>
       <Routes>
         <Route path='/listagem-rodadas' element={<ListagemRodadas />} />
-      </Routes>
-      <Routes>
-        <Route path='/listagem-tecnicos' element={<ListagemTecnicos />} />
       </Routes>
       <Routes>
         <Route path='/listagem-torneios' element={<ListagemTorneios />} />

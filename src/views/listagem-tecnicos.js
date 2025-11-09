@@ -22,7 +22,7 @@ function ListagemTecnicos() {
   const navigate = useNavigate();
 
   const cadastrar = () => {
-    navigate(`/cadastro-cursos`);
+    navigate(`/cadastro-tecnicos`);
   };
 
   const editar = (id) => {

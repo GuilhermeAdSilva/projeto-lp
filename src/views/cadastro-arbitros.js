@@ -80,7 +80,7 @@ function CadastroArbitros() {
   }
 
   async function buscar() {
-    if(idParam != null) {
+    if (idParam != null) {
       await axios.get(`${baseURL}/${idParam}`).then((response) => {
         setDados(response.data);
       });
@@ -126,7 +126,7 @@ function CadastroArbitros() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </FormGroup>
-              
+
               <FormGroup label='Senha: *' htmlFor='inputSenha'>
                 <input
                   type='password'
@@ -159,43 +159,33 @@ function CadastroArbitros() {
                   onChange={(e) => setTelefone(e.target.value)}
                 />
               </FormGroup>
-              {/*<FormGroup label='Sexo: *' htmlFor='inputSexo'>
+
+              <FormGroup label='Sexo: *' htmlFor='inputSexo'>
                 <input
-                  type='checkbox'
-                  maxLength='11'
-                  id='inputSexo'
-                  value={sexo}
-                  className='form-control'
+                  className='form-check-input'
+                  type='radio'
+                  id='checkSexoF'
                   name='sexo'
-                  onChange={(e) => setSexo (e.target.value)}
+                  value='F'
+                  checked={sexo === 'F'}
+                  onChange={(e) => setSexo(e.target.value)}
                 />
-              </FormGroup>*/}
-            
-            <FormGroup>
-                  <input
-                    className='form-check-input'
-                    type='checkbox'
-                    checked={sexo}
-                    id='checkSexoF'
-                    name='feminino'
-                    onChange={(e) =>
-                      setSexo(e.target.checked)
-                    }
-                  />
-                  F
-                  <input
-                    className='form-check-input'
-                    type='checkbox'
-                    checked={sexo}
-                    id='checkSexoM'
-                    name='masculino'
-                    onChange={(e) =>
-                      setSexo(e.target.checked)
-                    }
-                  />
-                  M
-                </FormGroup>
-        
+                <label className='form-check-label' htmlFor='checkSexoF'>F</label>
+
+                <input
+                  className='form-check-input'
+                  type='radio'
+                  id='checkSexoM'
+                  name='sexo'
+                  value='M'
+                  checked={sexo === 'M'}
+                  onChange={(e) => setSexo(e.target.value)}
+                />
+                <label className='form-check-label' htmlFor='checkSexoM'>M</label>
+
+
+              </FormGroup>
+
               <Stack spacing={1} padding={1} direction='row'>
                 <button
                   onClick={salvar}
