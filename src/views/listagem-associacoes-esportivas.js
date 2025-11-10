@@ -22,7 +22,7 @@ function ListagemAssociacoesEsportivas() {
   const navigate = useNavigate();
 
   const cadastrar = () => {
-    navigate(`/cadastro-cursos`);
+    navigate(`/cadastro-associacoes-esportivas`);
   };
 
   const editar = (id) => {

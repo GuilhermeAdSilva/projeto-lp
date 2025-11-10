@@ -3,6 +3,9 @@ import React from 'react';
 import ListagemArbitros from './views/listagem-arbitros';
 import CadastroArbitros from './views/cadastro-arbitros';
 
+import ListagemAssociacoesEsportivas from './views/listagem-associacoes-esportivas';
+import CadastroAssociacoesEsportivas from './views/cadastro-associacoes-esportivas';
+
 import ListagemJogadores from './views/listagem-jogadores';
 import CadastroJogadores from './views/cadastro-jogadores';
 
@@ -13,7 +16,6 @@ import ListagemTecnicos from './views/listagem-tecnicos';
 import CadastroTecnicos from './views/cadastro-tecnicos';
 
 import ListagemAssistencias from './views/listagem-assistencias';
-import ListagemAssociacoesEsportivas from './views/listagem-associacoes-esportivas';
 import ListagemCartoes from './views/listagem-cartoes';
 import ListagemCompeticoes from './views/listagem-competicoes';
 import ListagemEquipes from './views/listagem-equipes';
@@ -46,6 +48,9 @@ function Rotas(props) {
         <Route path='/listagem-arbitros' element={<ListagemArbitros />} />
         <Route path='/cadastro-arbitros/:idParam?' element={<CadastroArbitros />}/>
 
+        <Route path='/listagem-associacoes-esportivas' element={<ListagemAssociacoesEsportivas />} />
+        <Route path='/cadastro-associacoes-esportivas/:idParam?' element={<CadastroAssociacoesEsportivas />}/>
+
         <Route path='/listagem-jogadores' element={<ListagemJogadores />} />
         <Route path='/cadastro-jogadores/:idParam?' element={<CadastroJogadores />}/>
 
@@ -58,9 +63,6 @@ function Rotas(props) {
 
       <Routes>
         <Route path='/listagem-assistencias' element={<ListagemAssistencias />} />
-      </Routes>
-      <Routes>
-        <Route path='/listagem-associacoes-esportivas' element={<ListagemAssociacoesEsportivas />} />
       </Routes>
       <Routes>
         <Route path='/listagem-cartoes' element={<ListagemCartoes />} />
