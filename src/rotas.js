@@ -1,11 +1,13 @@
 import React from 'react';
 
-
 import ListagemArbitros from './views/listagem-arbitros';
 import CadastroArbitros from './views/cadastro-arbitros';
 
 import ListagemJogadores from './views/listagem-jogadores';
 import CadastroJogadores from './views/cadastro-jogadores';
+
+import ListagemPresidentes from './views/listagem-presidentes';
+import CadastroPresidentes from './views/cadastro-presidentes';
 
 import ListagemTecnicos from './views/listagem-tecnicos';
 import CadastroTecnicos from './views/cadastro-tecnicos';
@@ -19,7 +21,6 @@ import ListagemEscalacoes from './views/listagem-escalacoes';
 import ListagemGols from './views/listagem-gols';
 import ListagemInscricoes from './views/listagem-inscricoes';
 import ListagemPartidas from './views/listagem-partidas';
-import ListagemPresidentes from './views/listagem-presidentes';
 import ListagemResultados from './views/listagem-resultados';
 import ListagemRodadas from './views/listagem-rodadas';
 import ListagemTorneios from './views/listagem-torneios';
@@ -41,11 +42,15 @@ function Rotas(props) {
   return (
     <BrowserRouter>
       <Routes>
+
         <Route path='/listagem-arbitros' element={<ListagemArbitros />} />
         <Route path='/cadastro-arbitros/:idParam?' element={<CadastroArbitros />}/>
 
         <Route path='/listagem-jogadores' element={<ListagemJogadores />} />
         <Route path='/cadastro-jogadores/:idParam?' element={<CadastroJogadores />}/>
+
+        <Route path='/listagem-presidentes' element={<ListagemPresidentes />} />
+        <Route path='/cadastro-presidentes/:idParam?' element={<CadastroPresidentes />}/>
 
         <Route path='/listagem-tecnicos' element={<ListagemTecnicos />} />
         <Route path='/cadastro-tecnicos/:idParam?' element={<CadastroTecnicos />}/>
@@ -77,9 +82,6 @@ function Rotas(props) {
       </Routes>
       <Routes>
         <Route path='/listagem-partidas' element={<ListagemPartidas />} />
-      </Routes>
-      <Routes>
-        <Route path='/listagem-presidentes' element={<ListagemPresidentes />} />
       </Routes>
       <Routes>
         <Route path='/listagem-resultados' element={<ListagemResultados />} />

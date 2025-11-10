@@ -22,11 +22,11 @@ function ListagemPresidentes() {
   const navigate = useNavigate();
 
   const cadastrar = () => {
-    navigate(`/cadastro-cursos`);
+    navigate(`/cadastro-presidentes`);
   };
 
   const editar = (id) => {
-    navigate(`/cadastro-cursos/${id}`);
+    navigate(`/cadastro-presidentes/${id}`);
   };
 
   const [dados, setDados] = React.useState(null);

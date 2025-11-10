@@ -16,7 +16,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import axios from 'axios';
 import { BASE_URL2 } from '../config/axios';
 
-const baseURL = `${BASE_URL2}/torneio`;
+const baseURL = `${BASE_URL2}/torneios`;
 
 function ListagemTorneios() {
   const navigate = useNavigate();

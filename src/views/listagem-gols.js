@@ -16,7 +16,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import axios from 'axios';
 import { BASE_URL4 } from '../config/axios';
 
-const baseURL = `${BASE_URL4}/gol`;
+const baseURL = `${BASE_URL4}/gols`;
 
 function ListagemGols() {
   const navigate = useNavigate();

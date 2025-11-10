@@ -16,7 +16,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import axios from 'axios';
 import { BASE_URL3 } from '../config/axios';
 
-const baseURL = `${BASE_URL3}/partida`;
+const baseURL = `${BASE_URL3}/partidas`;
 
 function ListagemPartidas() {
   const navigate = useNavigate();
