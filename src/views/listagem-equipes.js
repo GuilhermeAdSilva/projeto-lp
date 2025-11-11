@@ -22,11 +22,11 @@ function ListagemEquipes() {
   const navigate = useNavigate();
 
   const cadastrar = () => {
-    navigate(`/cadastro-cursos`);
+    navigate(`/cadastro-equipes`);
   };
 
   const editar = (id) => {
-    navigate(`/cadastro-cursos/${id}`);
+    navigate(`/cadastro-equipes/${id}`);
   };
 
   const [dados, setDados] = React.useState(null);

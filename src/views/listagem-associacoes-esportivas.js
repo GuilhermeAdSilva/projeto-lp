@@ -26,7 +26,7 @@ function ListagemAssociacoesEsportivas() {
   };
 
   const editar = (id) => {
-    navigate(`/cadastro-cursos/${id}`);
+    navigate(`/cadastro-associacoes-esportivas/${id}`);
   };
 
   const [dados, setDados] = React.useState(null);

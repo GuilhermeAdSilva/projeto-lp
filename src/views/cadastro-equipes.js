@@ -14,32 +14,35 @@ import axios from 'axios';
 import { BASE_URL } from '../config/axios';
 import { BASE_URL2 } from '../config/axios';
 
-function CadastroAssociacoesEsportivas() {
+function CadastroEquipes() {
   const { idParam } = useParams();
 
   const navigate = useNavigate();
 
-  const baseURL = `${BASE_URL2}/associacoesEsportivas`;
+  const baseURL = `${BASE_URL2}/equipes`;
 
   const [id, setId] = useState('');
   const [nome, setNome] = useState('');
-  const [idPresidente, setIdPresidente] = useState(0);
+  const [idTecnico, setIdTecnico] = useState(0);
+  const [idAssociacaoEsportiva, setIdAssociacaoEsportiva] = useState(0);
   const [dados, setDados] = React.useState([]);
 
   function inicializar() {
     if (idParam == null) {
       setId('');
       setNome('');
-      setIdPresidente(0);
+      setIdTecnico(0);
+      setIdAssociacaoEsportiva(0);
     } else {
       setId(dados.id);
       setNome(dados.nome);
-      setIdPresidente(dados.idPresidente);
+      setIdTecnico(dados.idTecnico);
+      setIdAssociacaoEsportiva(dados.idAssociacaoEsportiva);
     }
   }
 
   async function salvar() {
-    let data = { id, nome, idPresidente };
+    let data = { id, nome, idTecnico, idAssociacaoEsportiva };
     data = JSON.stringify(data);
     if (idParam == null) {
       await axios
@@ -47,8 +50,8 @@ function CadastroAssociacoesEsportivas() {
           headers: { 'Content-Type': 'application/json' },
         })
         .then(function (response) {
-          mensagemSucesso(`Associacao Esportiva ${nome} cadastrada com sucesso!`);
-          navigate(`/listagem-associacoes-esportivas`);
+          mensagemSucesso(`Equipe ${nome} cadastrada com sucesso!`);
+          navigate(`/listagem-equipes`);
         })
         .catch(function (error) {
           mensagemErro(error.response.data);
@@ -59,8 +62,8 @@ function CadastroAssociacoesEsportivas() {
           headers: { 'Content-Type': 'application/json' },
         })
         .then(function (response) {
-          mensagemSucesso(`Associacao Esportiva ${nome} alterada com sucesso!`);
-          navigate(`/listagem-associacoes-esportivas`);
+          mensagemSucesso(`Equipe ${nome} alterada com sucesso!`);
+          navigate(`/listagem-equipes`);
         })
         .catch(function (error) {
           mensagemErro(error.response.data);
@@ -75,15 +78,23 @@ function CadastroAssociacoesEsportivas() {
       });
       setId(dados.id);
       setNome(dados.nome);
-      setIdPresidente(dados.idPresidente);
+      setIdTecnico(dados.idTecnico);
+      setIdAssociacaoEsportiva(dados.idAssociacaoEsportiva);
     }
   }
 
-  const [dadosPresidentes, setDadosPresidentes] = React.useState(null);
+  const [dadosTecnicos, setDadosTecnicos] = React.useState(null);
+  const [dadosAssociacoesEsportivas, setDadosAssociacoesEsportivas] = React.useState(null);
+  
+  useEffect(() => {
+    axios.get(`${BASE_URL}/tecnicos`).then((response) => {
+      setDadosTecnicos(response.data);
+    });
+  }, []);
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/presidentes`).then((response) => {
-      setDadosPresidentes(response.data);
+    axios.get(`${BASE_URL2}/associacoesEsportivas`).then((response) => {
+      setDadosAssociacoesEsportivas(response.data);
     });
   }, []);
 
@@ -92,11 +103,12 @@ function CadastroAssociacoesEsportivas() {
   }, [id]);
 
   if (!dados) return null;
-  if (!dadosPresidentes) return null;
+  if (!dadosTecnicos) return null
+  if (!dadosAssociacoesEsportivas) return null
 
   return (
     <div className='container'>
-      <Card title='Cadastro de Associacao Esportiva'>
+      <Card title='Cadastro de Equipe'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -110,18 +122,37 @@ function CadastroAssociacoesEsportivas() {
                   onChange={(e) => setNome(e.target.value)}
                 />
               </FormGroup>
-              <FormGroup label='Presidente: *' htmlFor='selectPresidente'>
+              <FormGroup label='Tecnico: *' htmlFor='selectTecnico'>
                 <select
                   className='form-select'
-                  id='selectPresidente'
-                  name='idPresidente'
-                  value={idPresidente}
-                  onChange={(e) => setIdPresidente(e.target.value)}
+                  id='selectTecnico'
+                  name='idTecnico'
+                  value={idTecnico}
+                  onChange={(e) => setIdTecnico(e.target.value)}
                 >
                   <option key='0' value='0'>
                     {' '}
                   </option>
-                  {dadosPresidentes.map((dado) => (
+                  {dadosTecnicos.map((dado) => (
+                    <option key={dado.id} value={dado.id}>
+                      {dado.nome}
+                    </option>
+                  ))}
+                </select>
+              </FormGroup>
+
+              <FormGroup label='Associação Esportiva: *' htmlFor='selectAssociacaoEsportiva'>
+                <select
+                  className='form-select'
+                  id='selectAssociacaoEsportiva'
+                  name='idAssociacaoEsportiva'
+                  value={idAssociacaoEsportiva}
+                  onChange={(e) => setIdAssociacaoEsportiva(e.target.value)}
+                >
+                  <option key='0' value='0'>
+                    {' '}
+                  </option>
+                  {dadosAssociacoesEsportivas.map((dado) => (
                     <option key={dado.id} value={dado.id}>
                       {dado.nome}
                     </option>
@@ -153,4 +184,4 @@ function CadastroAssociacoesEsportivas() {
   );
 }
 
-export default CadastroAssociacoesEsportivas;
+export default CadastroEquipes;
