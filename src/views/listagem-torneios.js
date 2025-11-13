@@ -22,7 +22,7 @@ function ListagemTorneios() {
   const navigate = useNavigate();
 
   const cadastrar = () => {
-    navigate(`/cadastro-cursos`);
+    navigate(`/cadastro-torneios`);
   };
 
   const editar = (id) => {
