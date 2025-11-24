@@ -6,6 +6,9 @@ import CadastroArbitros from './views/cadastro-arbitros';
 import ListagemAssociacoesEsportivas from './views/listagem-associacoes-esportivas';
 import CadastroAssociacoesEsportivas from './views/cadastro-associacoes-esportivas';
 
+import ListagemCompeticoes from './views/listagem-competicoes';
+import CadastroCompeticoes from './views/cadastro-competicoes';
+
 import ListagemEquipes from './views/listagem-equipes';
 import CadastroEquipes from './views/cadastro-equipes';
 
@@ -21,15 +24,16 @@ import CadastroPresidentes from './views/cadastro-presidentes';
 import ListagemTecnicos from './views/listagem-tecnicos';
 import CadastroTecnicos from './views/cadastro-tecnicos';
 
+import ListagemTorneios from './views/listagem-torneios';
+import CadastroTorneios from './views/cadastro-torneios'
+
 import ListagemAssistencias from './views/listagem-assistencias';
 import ListagemCartoes from './views/listagem-cartoes';
-import ListagemCompeticoes from './views/listagem-competicoes';
 import ListagemEscalacoes from './views/listagem-escalacoes';
 import ListagemGols from './views/listagem-gols';
 import ListagemPartidas from './views/listagem-partidas';
 import ListagemResultados from './views/listagem-resultados';
 import ListagemRodadas from './views/listagem-rodadas';
-import ListagemTorneios from './views/listagem-torneios';
 
 
 /*
@@ -55,8 +59,14 @@ function Rotas(props) {
         <Route path='/listagem-associacoes-esportivas' element={<ListagemAssociacoesEsportivas />} />
         <Route path='/cadastro-associacoes-esportivas/:idParam?' element={<CadastroAssociacoesEsportivas />}/>
 
+        <Route path='/listagem-competicoes' element={<ListagemCompeticoes />} />
+        <Route path='/cadastro-competicoes/:idParam?' element={<CadastroCompeticoes />}/>
+
         <Route path='/listagem-equipes' element={<ListagemEquipes />} />
         <Route path='/cadastro-equipes/:idParam?' element={<CadastroEquipes />}/>
+
+        <Route path='/listagem-inscricoes' element={<ListagemInscricoes />} />
+        <Route path='/cadastro-inscricoes/:idParam?' element={<CadastroInscricoes />}/>
 
         <Route path='/listagem-jogadores' element={<ListagemJogadores />} />
         <Route path='/cadastro-jogadores/:idParam?' element={<CadastroJogadores />}/>
@@ -66,6 +76,9 @@ function Rotas(props) {
 
         <Route path='/listagem-tecnicos' element={<ListagemTecnicos />} />
         <Route path='/cadastro-tecnicos/:idParam?' element={<CadastroTecnicos />}/>
+
+        <Route path='/listagem-torneios' element={<ListagemTorneios />} />
+        <Route path='/cadastro-torneios/:idParam?' element={<CadastroTorneios />}/>
       </Routes>
 
       <Routes>
@@ -75,17 +88,10 @@ function Rotas(props) {
         <Route path='/listagem-cartoes' element={<ListagemCartoes />} />
       </Routes>
       <Routes>
-        <Route path='/listagem-competicoes' element={<ListagemCompeticoes />} />
-      </Routes>
-      <Routes>
         <Route path='/listagem-escalacoes' element={<ListagemEscalacoes />} />
       </Routes>
       <Routes>
         <Route path='/listagem-gols' element={<ListagemGols />} />
-      </Routes>
-      <Routes>
-        <Route path='/listagem-inscricoes' element={<ListagemInscricoes />} />
-        <Route path='/cadastro-inscricoes/:idParam?' element={<CadastroInscricoes />}/>
       </Routes>
       <Routes>
         <Route path='/listagem-partidas' element={<ListagemPartidas />} />
@@ -95,9 +101,6 @@ function Rotas(props) {
       </Routes>
       <Routes>
         <Route path='/listagem-rodadas' element={<ListagemRodadas />} />
-      </Routes>
-      <Routes>
-        <Route path='/listagem-torneios' element={<ListagemTorneios />} />
       </Routes>
     </BrowserRouter>
   );
