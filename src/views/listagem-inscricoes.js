@@ -84,8 +84,8 @@ function ListagemInscricoes() {
                 <tbody>
                   {dados.map((dado) => (
                     <tr key={dado.id}>
-                      <td>{dado.id}</td>
-                      <td>{dado.id}</td>
+                      <td>{dado.nomeEquipe}</td>
+                      <td>{dado.nomeEdicao}</td>
                       <td>
                         <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton

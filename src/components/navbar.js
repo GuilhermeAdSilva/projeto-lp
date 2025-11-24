@@ -54,15 +54,7 @@ function Navbar(props) {
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-inscricoes' label='Inscricoes' />
           </ul>
-          <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-partidas' label='Partidas' />
-          </ul>
-          <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-rodadas' label='Rodadas' />
-          </ul>
-          <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-resultados' label='Resultados' />
-          </ul>
+        
 {/*
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-escalacoes' label='Escalacoes' />
@@ -78,6 +70,17 @@ function Navbar(props) {
 
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-assistencias' label='Assistencias' />
+          </ul>
+
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-partidas' label='Partidas' />
+          </ul>
+
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-rodadas' label='Rodadas' />
+          </ul>
+          <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/listagem-resultados' label='Resultados' />
           </ul>
 */}
           <ul className='navbar-nav'>
