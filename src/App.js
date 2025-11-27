@@ -7,6 +7,7 @@ import './bootstrap.css'
 import 'bootswatch/dist/flatly/bootstrap.css';
 import 'toastr/build/toastr.min';
 import 'toastr/build/toastr.css';
+import './ajustes.css'
 
 function App() {
   return (
