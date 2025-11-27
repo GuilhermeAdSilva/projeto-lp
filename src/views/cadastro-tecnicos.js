@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-import Stack from '@mui/material/Stack';
+import Stack from "@mui/material/Stack";
 
-import Card from '../components/card';
-import FormGroup from '../components/form-group';
+import Card from "../components/card";
+import FormGroup from "../components/form-group";
 
-import { mensagemSucesso, mensagemErro } from '../components/toastr';
+import { mensagemSucesso, mensagemErro } from "../components/toastr";
 
-import '../custom.css';
+import "../custom.css";
 
-import axios from 'axios';
-import { BASE_URL } from '../config/axios';
+import axios from "axios";
+import { BASE_URL } from "../config/axios";
 
 function CadastroTecnicos() {
   const { idParam } = useParams();
@@ -20,24 +20,24 @@ function CadastroTecnicos() {
 
   const baseURL = `${BASE_URL}/tecnicos`;
 
-  const [id, setId] = useState('');
-  const [nome, setNome] = useState('');
-  const [sexo, setSexo] = useState('');
-  const [email, setEmail] = useState('');
-  const [telefone, setTelefone] = useState('');
-  const [senha, setSenha] = useState('');
-  const [confirmacaoSenha, setConfirmacaoSenha] = useState('');
+  const [id, setId] = useState("");
+  const [nome, setNome] = useState("");
+  const [sexo, setSexo] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [senha, setSenha] = useState("");
+  const [confirmacaoSenha, setConfirmacaoSenha] = useState("");
   const [dados, setDados] = React.useState([]);
 
   function inicializar() {
     if (idParam == null) {
-      setId('');
-      setNome('');
-      setSexo('');
-      setEmail('');
-      setTelefone('');
-      setSenha('');
-      setConfirmacaoSenha('');
+      setId("");
+      setNome("");
+      setSexo("");
+      setEmail("");
+      setTelefone("");
+      setSenha("");
+      setConfirmacaoSenha("");
     } else {
       setId(dados.id);
       setNome(dados.nome);
@@ -55,7 +55,7 @@ function CadastroTecnicos() {
     if (idParam == null) {
       await axios
         .post(baseURL, data, {
-          headers: { 'Content-Type': 'application/json' },
+          headers: { "Content-Type": "application/json" },
         })
         .then(function (response) {
           mensagemSucesso(`Técnico ${nome} cadastrado com sucesso!`);
@@ -67,7 +67,7 @@ function CadastroTecnicos() {
     } else {
       await axios
         .put(`${baseURL}/${idParam}`, data, {
-          headers: { 'Content-Type': 'application/json' },
+          headers: { "Content-Type": "application/json" },
         })
         .then(function (response) {
           mensagemSucesso(`Técnico ${nome} alterado com sucesso!`);
@@ -101,103 +101,110 @@ function CadastroTecnicos() {
   if (!dados) return null;
 
   return (
-    <div className='container'>
-      <Card title='Cadastro de Técnicos'>
-        <div className='row'>
-          <div className='col-lg-12'>
-            <div className='bs-component'>
-              <FormGroup label='Nome: *' htmlFor='inputNome'>
+    <div className="container">
+      <Card title="Cadastro de Técnicos">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="bs-component">
+              <FormGroup label="Nome: *" htmlFor="inputNome">
                 <input
-                  type='text'
-                  id='inputNome'
+                  type="text"
+                  id="inputNome"
                   value={nome}
-                  className='form-control'
-                  name='nome'
+                  className="form-control"
+                  name="nome"
                   onChange={(e) => setNome(e.target.value)}
                 />
               </FormGroup>
-              <FormGroup label='Email: *' htmlFor='inputEmail'>
+              <FormGroup label="Email: *" htmlFor="inputEmail">
                 <input
-                  type='email'
-                  id='inputEmail'
+                  type="email"
+                  id="inputEmail"
                   value={email}
-                  className='form-control'
-                  name='email'
+                  className="form-control"
+                  name="email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </FormGroup>
 
-              <FormGroup label='Senha: *' htmlFor='inputSenha'>
+              <FormGroup label="Senha: *" htmlFor="inputSenha">
                 <input
-                  type='password'
-                  id='inputSenha'
+                  type="password"
+                  id="inputSenha"
                   value={senha}
-                  className='form-control'
-                  name='senha'
+                  className="form-control"
+                  name="senha"
                   onChange={(e) => setSenha(e.target.value)}
                 />
               </FormGroup>
 
-              <FormGroup label='Confirmação Senha: *' htmlFor='inputConfirmacaoSenha'>
+              <FormGroup
+                label="Confirmação Senha: *"
+                htmlFor="inputConfirmacaoSenha"
+              >
                 <input
-                  type='password'
-                  id='inputConfirmacaoSenha'
+                  type="password"
+                  id="inputConfirmacaoSenha"
                   value={confirmacaoSenha}
-                  className='form-control'
-                  name='confirmacaoSenha'
+                  className="form-control"
+                  name="confirmacaoSenha"
                   onChange={(e) => setConfirmacaoSenha(e.target.value)}
                 />
               </FormGroup>
 
-              <FormGroup label='Telefone:' htmlFor='inputTelefone'>
+              <FormGroup label="Telefone:" htmlFor="inputTelefone">
                 <input
-                  type='text'
-                  id='inputTelefone'
+                  type="text"
+                  id="inputTelefone"
                   value={telefone}
-                  className='form-control'
-                  name='telefone'
+                  className="form-control"
+                  name="telefone"
                   onChange={(e) => setTelefone(e.target.value)}
                 />
               </FormGroup>
 
-              <FormGroup label='Sexo: *' htmlFor='inputSexo'>
-                <input
-                  className='form-check-input'
-                  type='radio'
-                  id='checkSexoF'
-                  name='sexo'
-                  value='F'
-                  checked={sexo === 'F'}
-                  onChange={(e) => setSexo(e.target.value)}
-                />
-                <label className='form-check-label' htmlFor='checkSexoF'>F</label>
+              <FormGroup label="Sexo: *" htmlFor="inputSexo">
+                <div className="aura">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    id="checkSexoF"
+                    name="sexo"
+                    value="F"
+                    checked={sexo === "F"}
+                    onChange={(e) => setSexo(e.target.value)}
+                  />
+                  <label className="form-check-label" htmlFor="checkSexoF">
+                    Feminino
+                  </label>
 
-                <input
-                  className='form-check-input'
-                  type='radio'
-                  id='checkSexoM'
-                  name='sexo'
-                  value='M'
-                  checked={sexo === 'M'}
-                  onChange={(e) => setSexo(e.target.value)}
-                />
-                <label className='form-check-label' htmlFor='checkSexoM'>M</label>
-
-
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    id="checkSexoM"
+                    name="sexo"
+                    value="M"
+                    checked={sexo === "M"}
+                    onChange={(e) => setSexo(e.target.value)}
+                  />
+                  <label className="form-check-label" htmlFor="checkSexoM">
+                    Masculino
+                  </label>
+                </div>
               </FormGroup>
 
-              <Stack spacing={1} padding={1} direction='row'>
+              <Stack spacing={1} padding={1} direction="row">
                 <button
                   onClick={salvar}
-                  type='button'
-                  className='btn btn-success'
+                  type="button"
+                  className="btn btn-success"
                 >
                   Salvar
                 </button>
                 <button
                   onClick={inicializar}
-                  type='button'
-                  className='btn btn-danger'
+                  type="button"
+                  className="btn btn-danger"
                 >
                   Cancelar
                 </button>
