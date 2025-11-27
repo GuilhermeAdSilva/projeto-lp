@@ -40,7 +40,7 @@ function ListagemInscricoes() {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(function (response) {
-        mensagemSucesso(`Arbitro excluído com sucesso!`);
+        mensagemSucesso(`Inscrição excluída com sucesso!`);
         setDados(
           dados.filter((dado) => {
             return dado.id !== id;
@@ -48,7 +48,7 @@ function ListagemInscricoes() {
         );
       })
       .catch(function (error) {
-        mensagemErro(`Erro ao excluir o arbitro`);
+        mensagemErro(`Erro ao excluir a inscrição`);
       });
   }
 

@@ -26,7 +26,7 @@ function ListagemCompeticoes() {
   };
 
   const editar = (id) => {
-    navigate(`/cadastro-cursos/${id}`);
+    navigate(`/cadastro-competicoes/${id}`);
   };
 
   const [dados, setDados] = React.useState(null);

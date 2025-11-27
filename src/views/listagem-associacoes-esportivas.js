@@ -40,7 +40,7 @@ function ListagemAssociacoesEsportivas() {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(function (response) {
-        mensagemSucesso(`Arbitro excluído com sucesso!`);
+        mensagemSucesso(`Associação Esportiva excluída com sucesso!`);
         setDados(
           dados.filter((dado) => {
             return dado.id !== id;

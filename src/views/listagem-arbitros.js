@@ -26,7 +26,7 @@ function ListagemArbitros() {
   };
 
   const editar = (id) => {
-    navigate(`/cadastro-cursos/${id}`);
+    navigate(`/cadastro-arbitros/${id}`);
   };
 
   const [dados, setDados] = React.useState(null);

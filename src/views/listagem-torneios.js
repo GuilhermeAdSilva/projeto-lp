@@ -26,7 +26,7 @@ function ListagemTorneios() {
   };
 
   const editar = (id) => {
-    navigate(`/cadastro-cursos/${id}`);
+    navigate(`/cadastro-torneios/${id}`);
   };
 
   const [dados, setDados] = React.useState(null);
@@ -40,7 +40,7 @@ function ListagemTorneios() {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(function (response) {
-        mensagemSucesso(`Arbitro excluído com sucesso!`);
+        mensagemSucesso(`Torneio excluído com sucesso!`);
         setDados(
           dados.filter((dado) => {
             return dado.id !== id;
@@ -48,7 +48,7 @@ function ListagemTorneios() {
         );
       })
       .catch(function (error) {
-        mensagemErro(`Erro ao excluir o arbitro`);
+        mensagemErro(`Erro ao excluir o torneio`);
       });
   }
 

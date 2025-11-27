@@ -63,7 +63,7 @@ function CadastroInscricoes() {
         })
         .then(function (response) {
           mensagemSucesso(`Inscrição ${nome} alterada com sucesso!`);
-          navigate(`/listagem-equipes`);
+          navigate(`/listagem-inscricoes`);
         })
         .catch(function (error) {
           mensagemErro(error.response.data);
