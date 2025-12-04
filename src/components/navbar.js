@@ -28,11 +28,11 @@ function Navbar(props) {
             <NavbarItem render='true' href='/listagem-torneios' label='Torneios' />
           </ul>
           <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-associacoes-esportivas' label='Associacoes Esportivas' />
+            <NavbarItem render='true' href='/listagem-associacoes-esportivas' label='Associações Esportivas' />
           </ul>
 
           <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-arbitros' label='Arbitros' />
+            <NavbarItem render='true' href='/listagem-arbitros' label='Árbitros' />
           </ul>
 
           <ul className='navbar-nav'>
@@ -42,17 +42,17 @@ function Navbar(props) {
             <NavbarItem render='true' href='/listagem-presidentes' label='Presidentes' />
           </ul>
           <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-tecnicos' label='Tecnicos' />
+            <NavbarItem render='true' href='/listagem-tecnicos' label='Técnicos' />
           </ul>
           
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/listagem-equipes' label='Equipes' />
           </ul>
           <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-competicoes' label='Competicões' />
+            <NavbarItem render='true' href='/listagem-competicoes' label='Competições' />
           </ul>
           <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-inscricoes' label='Inscricoes' />
+            <NavbarItem render='true' href='/listagem-inscricoes' label='Inscrições' />
           </ul>
         
 {/*
