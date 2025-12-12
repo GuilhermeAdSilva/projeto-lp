@@ -83,7 +83,7 @@ function ListagemTecnicos() {
                 <tbody>
                   {dados.map((dado) => (
                     <tr key={dado.id}>
-                      <td>{dado.nome}</td>
+                      <td><a href= {`/visualizar-tecnicos/${dado.id}`}>{dado.nome}</a></td>
                       <td>
                         <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton
