@@ -20,6 +20,7 @@ import CadastroInscricoes from './views/cadastro-inscricoes';
 
 import ListagemJogadores from './views/listagem-jogadores';
 import CadastroJogadores from './views/cadastro-jogadores';
+import VisualizarJogadores from './views/visualizar-jogadores';
 
 import Login from './views/login';
 
@@ -77,6 +78,7 @@ function Rotas(props) {
 
         <Route path='/listagem-jogadores' element={<ListagemJogadores />} />
         <Route path='/cadastro-jogadores/:idParam?' element={<CadastroJogadores />}/>
+        <Route path='/visualizar-jogadores/:idParam?' element={<VisualizarJogadores />}/>
 
         <Route path='/login' element={<Login />} />
 
