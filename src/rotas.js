@@ -52,6 +52,7 @@ import CadastroAtividadeComplementar from './views/cadastro-atividade-complement
 */
 
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import Estatisticas from './views/estatisticas';
 
 function Rotas(props) {
   return (
@@ -72,6 +73,8 @@ function Rotas(props) {
 
         <Route path='/listagem-equipes' element={<ListagemEquipes />} />
         <Route path='/cadastro-equipes/:idParam?' element={<CadastroEquipes />}/>
+
+        <Route path='/estatisticas' element={<Estatisticas />} />
 
         <Route path='/listagem-inscricoes' element={<ListagemInscricoes />} />
         <Route path='/cadastro-inscricoes/:idParam?' element={<CadastroInscricoes />}/>
