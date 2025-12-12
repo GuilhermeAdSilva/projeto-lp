@@ -28,7 +28,9 @@ function CadastroCompeticoes() {
   const [returno, setReturno] = useState("");
   const [modalidade, setModalidade] = useState("");
   const [idTorneio, setTorneio] = useState("");
+  const [quantidadeEquipes, setQuantidadeEquipes] = useState("");
   const [dados, setDados] = React.useState([]);
+
 
   function inicializar() {
     if (idParam == null) {
@@ -40,6 +42,7 @@ function CadastroCompeticoes() {
       setReturno("");
       setModalidade("");
       setTorneio("");
+      setQuantidadeEquipes("");
     } else {
       setId(dados.id);
       setNomeEdicao(dados.nomeEdicao);
@@ -49,6 +52,7 @@ function CadastroCompeticoes() {
       setReturno(dados.returno);
       setModalidade(dados.modalidade);
       setTorneio(dados.idTorneio);
+      setQuantidadeEquipes(dados.quantidadeEquipes);
     }
   }
 
@@ -62,6 +66,7 @@ function CadastroCompeticoes() {
       returno,
       modalidade,
       idTorneio,
+      quantidadeEquipes,
     };
     data = JSON.stringify(data);
     if (idParam == null) {
@@ -104,6 +109,7 @@ function CadastroCompeticoes() {
       setReturno(dados.returno);
       setModalidade(dados.modalidade);
       setTorneio(dados.idTorneio);
+      setQuantidadeEquipes(dados.quantidadeEquipes)
     }
   }
 
@@ -248,6 +254,17 @@ function CadastroCompeticoes() {
                     </option>
                   ))}
                 </select>
+              </FormGroup>
+
+              <FormGroup label="Quantidade de Equipes participantes: " htmlFor="inputQuantidadeEquipes">
+                <input
+                  type="radio"
+                  id="inputQuantidadeEquipes"
+                  value={quantidadeEquipes}
+                  className="form-control"
+                  name="quantidadeEquipes"
+                  onChange={(e) => setQuantidadeEquipes(e.target.value)}
+                />
               </FormGroup>
 
               <Stack spacing={1} padding={1} direction="row">
