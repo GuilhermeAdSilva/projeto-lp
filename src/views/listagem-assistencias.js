@@ -22,11 +22,11 @@ function ListagemAssistencias() {
   const navigate = useNavigate();
 
   const cadastrar = () => {
-    navigate(`/cadastro-cursos`);
+    navigate(`/cadastro-assistencias`);
   };
 
   const editar = (id) => {
-    navigate(`/cadastro-cursos/${id}`);
+    navigate(`/cadastro-assistencias/${id}`);
   };
 
   const [dados, setDados] = React.useState(null);
@@ -62,7 +62,7 @@ function ListagemAssistencias() {
 
   return (
     <div className='container'>
-      <Card title='Listagem de Arbitros'>
+      <Card title='Listagem de Assistencias'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -71,19 +71,23 @@ function ListagemAssistencias() {
                 className='btn btn-warning'
                 onClick={() => cadastrar()}
               >
-                Novo Arbitro
+                Nova Assistencia
               </button>
               <table className='table table-hover'>
                 <thead>
                   <tr>
-                    <th scope='col'>ID</th>
+                    <th scope='col'>Nome</th>
+                    <th scope='col'>Minuto</th>
+                    <th scope='col'>Competição</th>
                     <th scope='col'>Ações</th>
                   </tr>
                 </thead>
                 <tbody>
                   {dados.map((dado) => (
                     <tr key={dado.id}>
-                      <td>{dado.id}</td>
+                      <td>{dado.nomeJogador}</td>
+                      <td>{dado.minuto}</td>
+                      <td>{dado.nomeCompeticao}</td>
                       <td>
                         <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton

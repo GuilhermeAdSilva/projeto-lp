@@ -1,7 +1,7 @@
 import Card from '../components/card';
 
 import '../custom.css';
-import { Volleyball, HandPlatter } from 'lucide-react';
+import '../ajustes.css'
 
 function Estatisticas() {
     return (
@@ -21,10 +21,10 @@ function Estatisticas() {
                                 </thead>
                                 <tbody>
                                         <tr>
-                                            <td><a href="#"><Volleyball /></a></td>
-                                            <td><a href="#"><HandPlatter /></a></td>
-                                            <td><a href="#"><HandPlatter /></a></td>
-                                            <td><a href="#"><HandPlatter /></a></td>
+                                            <td><a className='emoji-est' href="#">&#9917;</a></td>
+                                            <td><a className='emoji-est' href="/listagem-assistencias">&#129497;</a></td>
+                                            <td><a className='emoji-est' href="#">&#129000;</a></td>
+                                            <td><a className='emoji-est' href="#">&#128997;</a></td>
                                         </tr>
                                 </tbody>
                             </table>
