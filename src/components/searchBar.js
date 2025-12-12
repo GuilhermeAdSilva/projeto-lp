@@ -1,33 +1,27 @@
 import { useState } from "react";
+import { Search } from "lucide-react";
 
+export default function SearchBar({ onSearch }) {
+    const [value, setValue] = useState("");
 
-export function SearchBar({ onSearch }) {
-  const [search, setSearch] = useState("");
+    function handleSubmit(e) {
+        e.preventDefault();
+        if (onSearch) onSearch(value);
+    }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSearch(search);
-  };
+    return (
+        <form className="searchbar" onSubmit={handleSubmit}>
+            <input
+                type="text"
+                placeholder="Buscar..."
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                className="searchInput"
+            />
 
-  return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex items-center gap-2 bg-gray-100 p-2 rounded-lg shadow"
-    >
-      <input
-        type="text"
-        placeholder="Buscar..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="flex-1 bg-transparent outline-none text-gray-800"
-      />
-
-      <button
-        type="submit"
-        className="px-4 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-      >
-        Buscar
-      </button>
-    </form>
-  );
+            <button type="submit" className="searchButton">
+                <Search size={20} />
+            </button>
+        </form>
+    );
 }

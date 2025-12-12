@@ -15,7 +15,6 @@ import EditIcon from '@mui/icons-material/Edit';
 
 import axios from 'axios';
 import { BASE_URL2 } from '../config/axios';
-import { SearchBar } from '../components/searchBar';
 
 const baseURL = `${BASE_URL2}/edicoesTorneios`;
 
@@ -59,10 +58,6 @@ function ListagemCompeticoes() {
     });
   }, []);
 
-  const handleSearch = (value) => {
-    console.log("Texto pesquisado:", value);
-  };
-
   if (!dados) return null;
 
   return (
@@ -71,7 +66,6 @@ function ListagemCompeticoes() {
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
-              <SearchBar onSearch={handleSearch}/>
               <button
                 type='button'
                 className='btn btn-warning'

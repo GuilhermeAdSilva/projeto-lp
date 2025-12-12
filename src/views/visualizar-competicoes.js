@@ -13,6 +13,8 @@ import "../custom.css";
 import axios from "axios";
 import { BASE_URL2 } from "../config/axios";
 
+import SearchBar from "../components/searchBar";
+
 function VisualizarCompeticoes() {
   const { idParam } = useParams();
 
@@ -82,12 +84,17 @@ function VisualizarCompeticoes() {
 
   if (!dados) return null;
 
+  function handleSearch(text) {
+        console.log("Buscando por:", text);
+    }
+
   return (
     <div className="container">
       <Card title="Dados da Competição">
         <div className="row">
           <div className="col-lg-12">
             <div className="bs-component">
+              <SearchBar onSearch={handleSearch} />
               <FormGroup label="Nome da Edição: *" htmlFor="inputNome">
                 <input
                   type="text"
