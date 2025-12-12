@@ -9,6 +9,7 @@ import 'toastr/build/toastr.min';
 import 'toastr/build/toastr.css';
 import './ajustes.css'
 
+
 function App() {
   return (
     <div className="App">

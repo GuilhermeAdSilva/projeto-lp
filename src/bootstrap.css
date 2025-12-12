@@ -3999,7 +3999,7 @@ textarea.form-control-lg {
   display: flex;
   flex-wrap: inherit;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
@@ -12549,7 +12549,8 @@ a {
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     background-image: linear-gradient(0deg, #4f4f4f1f, #8d8d8d1f, #bfbfbf1f, #dfdfdf1f, #ffffff1f);
     font-size: 1.1rem;
 }

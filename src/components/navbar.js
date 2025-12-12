@@ -1,6 +1,5 @@
 import React from 'react';
 import 'bootswatch/dist/flatly/bootstrap.css';
-
 import NavbarItem from './navbarItem';
 
 function Navbar(props) {
@@ -8,7 +7,7 @@ function Navbar(props) {
     <div className='navbar navbar-expand-lg fixed-top navbar-dark bg-primary'>
       <div className='container'>
         <a href='/' className='navbar-brand'>
-          LP 2
+          FutLeague
         </a>
         <button
           className='navbar-toggler'
