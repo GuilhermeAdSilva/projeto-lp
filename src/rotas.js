@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Home from './views/home';
+
 import ListagemArbitros from './views/listagem-arbitros';
 import CadastroArbitros from './views/cadastro-arbitros';
 
@@ -54,6 +56,8 @@ function Rotas(props) {
   return (
     <BrowserRouter>
       <Routes>
+
+        <Route path='/home' element={<Home />} />
 
         <Route path='/listagem-arbitros' element={<ListagemArbitros />} />
         <Route path='/cadastro-arbitros/:idParam?' element={<CadastroArbitros />}/>

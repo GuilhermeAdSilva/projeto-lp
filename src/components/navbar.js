@@ -6,7 +6,7 @@ function Navbar(props) {
   return (
     <div className='navbar navbar-expand-lg fixed-top navbar-dark bg-primary'>
       <div className='container'>
-        <a href='/' className='navbar-brand'>
+        <a href='/home' className='navbar-brand'>
           FutLeague
         </a>
         <button
