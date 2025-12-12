@@ -34,3 +34,8 @@ button.btn.btn-warning {
 label.form-check-label {
     margin-right: 1.5rem;
 }
+
+.icon-lucide {
+    width: 2.5rem;
+    height: 2.5rem;
+}
