@@ -1,13 +1,15 @@
 import React from 'react';
 import 'bootswatch/dist/flatly/bootstrap.css';
+import './../ajustes.css'
 import NavbarItem from './navbarItem';
+import { HouseIcon } from 'lucide-react';
 
 function Navbar(props) {
   return (
     <div className='navbar navbar-expand-lg fixed-top navbar-dark bg-primary'>
       <div className='container'>
         <a href='/' className='navbar-brand'>
-          FutLeague
+          <HouseIcon className='icon-lucide'/>
         </a>
         <button
           className='navbar-toggler'
