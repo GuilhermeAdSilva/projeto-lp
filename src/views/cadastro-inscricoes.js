@@ -108,21 +108,10 @@ function CadastroInscricoes() {
 
   return (
     <div className='container'>
-      <Card title='Cadastro de Inscrições'>
+      <Card title={`Inscrever em Competição`}>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
-
-              <FormGroup label='Nome: *' htmlFor='inputNome'>
-                <input
-                  type='text'
-                  id='inputNome'
-                  value={nome}
-                  className='form-control'
-                  name='nome'
-                  onChange={(e) => setNome(e.target.value)}
-                />
-              </FormGroup>
     
               <FormGroup label='Equipe: *' htmlFor='selectEquipe'>
                 <select
@@ -150,6 +139,7 @@ function CadastroInscricoes() {
                   name='idEdicaoTorneio'
                   value={idEdicaoTorneio}
                   onChange={(e) => setIdEdicaoTorneio(e.target.value)}
+                  disabled
                 >
                   <option key='0' value='0'>
                     {' '}
