@@ -62,74 +62,75 @@ import Estatisticas from './views/estatisticas';
 import ListagemAssistencias from './views/listagem-assistencias';
 import CadastroAssistencias from './views/cadastro-assistencias';
 
-function Rotas(props) {
+import Navbar from './components/navbar';
+
+function Rotas() {
   return (
     <BrowserRouter>
       <Routes>
 
-        <Route path='/home' element={<Home />} />
+        {/* PÁGINA INICIAL */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Home />
+            </>
+          }
+        />
 
-        <Route path='/listagem-arbitros' element={<ListagemArbitros />} />
-        <Route path='/cadastro-arbitros/:idParam?' element={<CadastroArbitros />} />
-        <Route path='/visualizar-arbitros/:idParam?' element={<VisualizarArbitros />} />
+        {/* ROTAS NORMAIS */}
+        <Route path="/home" element={<Home />} />
 
-        <Route path='/listagem-associacoes-esportivas' element={<ListagemAssociacoesEsportivas />} />
-        <Route path='/cadastro-associacoes-esportivas/:idParam?' element={<CadastroAssociacoesEsportivas />} />
-        <Route path='/visualizar-associacoes-esportivas/:idParam?' element={<VisualizarAssociacoesEsportivas />} />
+        <Route path="/listagem-arbitros" element={<ListagemArbitros />} />
+        <Route path="/cadastro-arbitros/:idParam?" element={<CadastroArbitros />} />
+        <Route path="/visualizar-arbitros/:idParam?" element={<VisualizarArbitros />} />
 
-        <Route path='/listagem-competicoes' element={<ListagemCompeticoes />} />
-        <Route path='/cadastro-competicoes/:idParam?' element={<CadastroCompeticoes />} />
-        <Route path='/visualizar-competicoes/:idParam?' element={<VisualizarCompeticoes />} />
+        <Route path="/listagem-associacoes-esportivas" element={<ListagemAssociacoesEsportivas />} />
+        <Route path="/cadastro-associacoes-esportivas/:idParam?" element={<CadastroAssociacoesEsportivas />} />
+        <Route path="/visualizar-associacoes-esportivas/:idParam?" element={<VisualizarAssociacoesEsportivas />} />
 
-        <Route path='/listagem-equipes' element={<ListagemEquipes />} />
-        <Route path='/cadastro-equipes/:idParam?' element={<CadastroEquipes />} />
-        <Route path='/visualizar-equipes/:idParam?' element={<VisualizarEquipes />} />
+        <Route path="/listagem-competicoes" element={<ListagemCompeticoes />} />
+        <Route path="/cadastro-competicoes/:idParam?" element={<CadastroCompeticoes />} />
+        <Route path="/visualizar-competicoes/:idParam?" element={<VisualizarCompeticoes />} />
 
-        <Route path='/estatisticas' element={<Estatisticas />} />
+        <Route path="/listagem-equipes" element={<ListagemEquipes />} />
+        <Route path="/cadastro-equipes/:idParam?" element={<CadastroEquipes />} />
+        <Route path="/visualizar-equipes/:idParam?" element={<VisualizarEquipes />} />
 
-        <Route path='/listagem-inscricoes' element={<ListagemInscricoes />} />
-        <Route path='/cadastro-inscricoes/:idParam?' element={<CadastroInscricoes />} />
+        <Route path="/estatisticas" element={<Estatisticas />} />
 
-        <Route path='/listagem-jogadores' element={<ListagemJogadores />} />
-        <Route path='/cadastro-jogadores/:idParam?' element={<CadastroJogadores />} />
-        <Route path='/visualizar-jogadores/:idParam?' element={<VisualizarJogadores />} />
+        <Route path="/listagem-inscricoes" element={<ListagemInscricoes />} />
+        <Route path="/cadastro-inscricoes/:idParam?" element={<CadastroInscricoes />} />
 
-        <Route path='/login' element={<Login />} />
+        <Route path="/listagem-jogadores" element={<ListagemJogadores />} />
+        <Route path="/cadastro-jogadores/:idParam?" element={<CadastroJogadores />} />
+        <Route path="/visualizar-jogadores/:idParam?" element={<VisualizarJogadores />} />
 
-        <Route path='/listagem-presidentes' element={<ListagemPresidentes />} />
-        <Route path='/cadastro-presidentes/:idParam?' element={<CadastroPresidentes />} />
-        <Route path='/visualizar-presidentes/:idParam?' element={<VisualizarPresidentes />} />
+        <Route path="/login" element={<Login />} />
 
-        <Route path='/listagem-tecnicos' element={<ListagemTecnicos />} />
-        <Route path='/cadastro-tecnicos/:idParam?' element={<CadastroTecnicos />} />
-        <Route path='/visualizar-tecnicos/:idParam?' element={<VisualizarTecnicos />} />
+        <Route path="/listagem-presidentes" element={<ListagemPresidentes />} />
+        <Route path="/cadastro-presidentes/:idParam?" element={<CadastroPresidentes />} />
+        <Route path="/visualizar-presidentes/:idParam?" element={<VisualizarPresidentes />} />
 
-        <Route path='/listagem-torneios' element={<ListagemTorneios />} />
-        <Route path='/cadastro-torneios/:idParam?' element={<CadastroTorneios />} />
-        <Route path='/visualizar-torneios/:idParam?' element={<VisualizarTorneios />} />
+        <Route path="/listagem-tecnicos" element={<ListagemTecnicos />} />
+        <Route path="/cadastro-tecnicos/:idParam?" element={<CadastroTecnicos />} />
+        <Route path="/visualizar-tecnicos/:idParam?" element={<VisualizarTecnicos />} />
 
+        <Route path="/listagem-torneios" element={<ListagemTorneios />} />
+        <Route path="/cadastro-torneios/:idParam?" element={<CadastroTorneios />} />
+        <Route path="/visualizar-torneios/:idParam?" element={<VisualizarTorneios />} />
 
-        <Route path='/listagem-assistencias' element={<ListagemAssistencias />} />
-        <Route path='/cadastro-assistencias/:idParam?' element={<CadastroAssistencias />} />
-      </Routes>
+        <Route path="/listagem-assistencias" element={<ListagemAssistencias />} />
+        <Route path="/cadastro-assistencias/:idParam?" element={<CadastroAssistencias />} />
 
-      <Routes>
-        <Route path='/listagem-cartoes' element={<ListagemCartoes />} />
-      </Routes>
-      <Routes>
-        <Route path='/listagem-escalacoes' element={<ListagemEscalacoes />} />
-      </Routes>
-      <Routes>
-        <Route path='/listagem-gols' element={<ListagemGols />} />
-      </Routes>
-      <Routes>
-        <Route path='/listagem-partidas' element={<ListagemPartidas />} />
-      </Routes>
-      <Routes>
-        <Route path='/listagem-resultados' element={<ListagemResultados />} />
-      </Routes>
-      <Routes>
-        <Route path='/listagem-rodadas' element={<ListagemRodadas />} />
+        <Route path="/listagem-cartoes" element={<ListagemCartoes />} />
+        <Route path="/listagem-escalacoes" element={<ListagemEscalacoes />} />
+        <Route path="/listagem-gols" element={<ListagemGols />} />
+        <Route path="/listagem-partidas" element={<ListagemPartidas />} />
+        <Route path="/listagem-resultados" element={<ListagemResultados />} />
+        <Route path="/listagem-rodadas" element={<ListagemRodadas />} />
+
       </Routes>
     </BrowserRouter>
   );

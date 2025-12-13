@@ -10,6 +10,8 @@ import 'toastr/build/toastr.css';
 import './ajustes.css'
 import Home from './views/home';
 
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
