@@ -26,6 +26,9 @@ function ListagemAssistencias() {
   const [competicaoSelecionada, setCompeticaoSelecionada] = React.useState(null);
   const [ranking, setRanking] = React.useState([]);
 
+  const [tipoBusca, setTipoBusca] = React.useState('jogador');
+  const [termoBusca, setTermoBusca] = React.useState('');
+
   // ===== NAVEGAÇÃO =====
   const cadastrar = () => {
     navigate('/cadastro-assistencias');
@@ -64,13 +67,10 @@ function ListagemAssistencias() {
     setRanking(rankingOrdenado);
   }
 
-  // ===== FILTRO POR COMPETIÇÃO =====
+  // ===== FILTRO POR COMPETIÇÃO (CLICK) =====
   function handleClickEst(nomeCompeticao) {
-    // Remove filtro
     if (competicaoSelecionada === nomeCompeticao) {
-      setDados(dadosOriginais);
-      setCompeticaoSelecionada(null);
-      setRanking([]);
+      limparFiltros();
       return;
     }
 
@@ -81,6 +81,44 @@ function ListagemAssistencias() {
     setDados(filtrados);
     setCompeticaoSelecionada(nomeCompeticao);
     gerarRanking(nomeCompeticao);
+  }
+
+  // ===== BARRA DE PESQUISA =====
+  function aplicarBusca(valor, tipo) {
+    let lista = [...dadosOriginais];
+
+    // Se houver competição selecionada
+    if (competicaoSelecionada) {
+      lista = lista.filter(
+        (dado) => dado.nomeCompeticao === competicaoSelecionada
+      );
+    }
+
+    if (!valor) {
+      setDados(lista);
+      return;
+    }
+
+    const filtrados = lista.filter((dado) => {
+      if (tipo === 'jogador') {
+        return dado.nomeJogador
+          .toLowerCase()
+          .includes(valor.toLowerCase());
+      }
+
+      return dado.nomeCompeticao
+        .toLowerCase()
+        .includes(valor.toLowerCase());
+    });
+
+    setDados(filtrados);
+  }
+
+  function limparFiltros() {
+    setDados(dadosOriginais);
+    setCompeticaoSelecionada(null);
+    setRanking([]);
+    setTermoBusca('');
   }
 
   // ===== EXCLUIR =====
@@ -107,108 +145,130 @@ function ListagemAssistencias() {
     });
   }, []);
 
-  if (dados.length === 0) return null;
-
   return (
     <div className="container">
       <Card title="Listagem de Assistências">
         <div className="row">
           <div className="col-lg-12">
-            <div className="bs-component">
-              <button
-                type="button"
-                className="btn btn-warning mb-3"
-                onClick={cadastrar}
-              >
-                Nova Assistência
-              </button>
 
-              {competicaoSelecionada && (
-                <button
-                  className="btn btn-secondary mb-3 ms-2"
-                  onClick={() => {
-                    setDados(dadosOriginais);
-                    setCompeticaoSelecionada(null);
-                    setRanking([]);
+            {/* ===== BARRA DE PESQUISA ===== */}
+            <div className="row mb-3">
+              <div className="col-md-3">
+                <select
+                  className="form-control"
+                  value={tipoBusca}
+                  onChange={(e) => {
+                    setTipoBusca(e.target.value);
+                    aplicarBusca(termoBusca, e.target.value);
                   }}
                 >
-                  Mostrar todas
+                  <option value="jogador">Jogador</option>
+                  <option value="competicao">Competição</option>
+                </select>
+              </div>
+
+              <div className="col-md-6">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder={`Pesquisar por ${tipoBusca}`}
+                  value={termoBusca}
+                  onChange={(e) => {
+                    setTermoBusca(e.target.value);
+                    aplicarBusca(e.target.value, tipoBusca);
+                  }}
+                />
+              </div>
+
+              <div className="col-md-3">
+                <button
+                  className="btn btn-secondary w-100"
+                  onClick={limparFiltros}
+                >
+                  Limpar filtros
                 </button>
-              )}
-
-              {/* ===== TABELA DE ASSISTÊNCIAS ===== */}
-              <table className="table table-hover">
-                <thead>
-                  <tr>
-                    <th>Nome</th>
-                    <th>Competição</th>
-                    <th>Ações</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {dados.map((dado) => (
-                    <tr key={dado.id}>
-                      <td>{dado.nomeJogador}</td>
-
-                      <td
-                        style={{
-                          cursor: 'pointer',
-                          fontWeight:
-                            competicaoSelecionada === dado.nomeCompeticao
-                              ? 'bold'
-                              : 'normal',
-                        }}
-                        onClick={() =>
-                          handleClickEst(dado.nomeCompeticao)
-                        }
-                      >
-                        {dado.nomeCompeticao}
-                      </td>
-
-                      <td>
-                        <Stack spacing={1} direction="row" justifyContent="center">
-                          <IconButton onClick={() => editar(dado.id)}>
-                            <EditIcon />
-                          </IconButton>
-                          <IconButton onClick={() => excluir(dado.id)}>
-                            <DeleteIcon />
-                          </IconButton>
-                        </Stack>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-
-              {/* ===== RANKING ===== */}
-              {competicaoSelecionada && ranking.length > 0 && (
-                <div className="mt-5">
-                  <h4>
-                    Jogadores com mais assistências — {competicaoSelecionada}
-                  </h4>
-
-                  <table className="table table-striped mt-3">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Jogador</th>
-                        <th>Total de Assistências</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {ranking.map((jogador, index) => (
-                        <tr key={jogador.idJogador}>
-                          <td>{index + 1}</td>
-                          <td>{jogador.nomeJogador}</td>
-                          <td>{jogador.totalAssistencias}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
-
+              </div>
             </div>
+
+            {/* ===== BOTÕES ===== */}
+            <button
+              type="button"
+              className="btn btn-warning mb-3"
+              onClick={cadastrar}
+            >
+              Nova Assistência
+            </button>
+
+            {/* ===== TABELA ===== */}
+            <table className="table table-hover">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Competição</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dados.map((dado) => (
+                  <tr key={dado.id}>
+                    <td>{dado.nomeJogador}</td>
+                    <td
+                      style={{
+                        cursor: 'pointer',
+                        fontWeight:
+                          competicaoSelecionada === dado.nomeCompeticao
+                            ? 'bold'
+                            : 'normal',
+                      }}
+                      onClick={() =>
+                        handleClickEst(dado.nomeCompeticao)
+                      }
+                    >
+                      {dado.nomeCompeticao}
+                    </td>
+                    <td>
+                      <Stack spacing={1} direction="row" justifyContent="center">
+                        <IconButton onClick={() => editar(dado.id)}>
+                          <EditIcon />
+                        </IconButton>
+                        <IconButton onClick={() => excluir(dado.id)}>
+                          <DeleteIcon />
+                        </IconButton>
+                      </Stack>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            {/* ===== RANKING ===== */}
+            {competicaoSelecionada && ranking.length > 0 && (
+              <div className="mt-5">
+                <h4>
+                  Jogadores com mais assistências — {competicaoSelecionada}
+                </h4>
+
+                <table className="table table-striped mt-3">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Jogador</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {ranking.map((jogador, index) => (
+                      <tr key={jogador.idJogador}>
+                        <td>{index + 1}</td>
+                        <td>{jogador.nomeJogador}</td>
+                        <td>{jogador.totalAssistencias}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
           </div>
         </div>
       </Card>
