@@ -102,7 +102,7 @@ function CadastroTecnicos() {
 
   return (
     <div className="container">
-      <Card title="Cadastro de Técnicos">
+      <Card title="Cadastro de Técnico">
         <div className="row">
           <div className="col-lg-12">
             <div className="bs-component">

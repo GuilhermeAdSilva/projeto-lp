@@ -102,7 +102,7 @@ function VisualizarArbitros() {
 
   return (
     <div className="container">
-      <Card title="Cadastro de Arbitro">
+      <Card title="Dados do Arbitro">
         <div className="row">
           <div className="col-lg-12">
             <div className="bs-component">

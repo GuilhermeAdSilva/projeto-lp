@@ -96,7 +96,7 @@ function VisualizarAssociacoesEsportivas() {
 
   return (
     <div className='container'>
-      <Card title='Cadastro de Associacao Esportiva'>
+      <Card title='Dados da Associacao Esportiva'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>

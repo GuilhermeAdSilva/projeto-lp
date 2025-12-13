@@ -102,7 +102,7 @@ function VisualizarPresidentes() {
 
   return (
     <div className="container">
-      <Card title="Cadastro de Presidente">
+      <Card title="Dados do Presidente">
         <div className="row">
           <div className="col-lg-12">
             <div className="bs-component">

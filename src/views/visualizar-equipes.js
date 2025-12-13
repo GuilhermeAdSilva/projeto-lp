@@ -108,7 +108,7 @@ function VisualizarEquipes() {
 
   return (
     <div className='container'>
-      <Card title='Cadastro de Equipe'>
+      <Card title='Dados da Equipe'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { href, useNavigate, useParams } from "react-router-dom";
 
 import Stack from "@mui/material/Stack";
 
@@ -12,6 +12,9 @@ import "../custom.css";
 
 import axios from "axios";
 import { BASE_URL2 } from "../config/axios";
+import { BASE_URL3 } from "../config/axios";
+
+
 
 import SearchBar from "../components/searchBar";
 
@@ -30,7 +33,9 @@ function VisualizarCompeticoes() {
   const [returno, setReturno] = useState("");
   const [modalidade, setModalidade] = useState("");
   const [idTorneio, setTorneio] = useState("");
+  const [quantidadeEquipes, setQuantidadeEquipes] = useState("");
   const [dados, setDados] = React.useState([]);
+
 
   function inicializar() {
     if (idParam == null) {
@@ -42,6 +47,7 @@ function VisualizarCompeticoes() {
       setReturno("");
       setModalidade("");
       setTorneio("");
+      setQuantidadeEquipes("");
     } else {
       setId(dados.id);
       setNomeEdicao(dados.nomeEdicao);
@@ -51,8 +57,10 @@ function VisualizarCompeticoes() {
       setReturno(dados.returno);
       setModalidade(dados.modalidade);
       setTorneio(dados.idTorneio);
+      setQuantidadeEquipes(dados.quantidadeEquipes);
     }
   }
+
 
   async function buscar() {
     if (idParam != null) {
@@ -67,6 +75,7 @@ function VisualizarCompeticoes() {
       setReturno(dados.returno);
       setModalidade(dados.modalidade);
       setTorneio(dados.idTorneio);
+      setQuantidadeEquipes(dados.quantidadeEquipes)
     }
   }
 
@@ -226,6 +235,46 @@ function VisualizarCompeticoes() {
                   ))}
                 </select>
               </FormGroup>
+
+              <FormGroup label="Quantidade de Equipes participantes: " htmlFor="inputQuantidadeEquipes">
+                <input
+                  type="radio"
+                  id="inputQuantidadeEquipes"
+                  value={quantidadeEquipes}
+                  className="form-control"
+                  name="quantidadeEquipes"
+                  onChange={(e) => setQuantidadeEquipes(e.target.value)}
+                />
+              </FormGroup>
+
+              <Stack spacing={1} padding={1} direction="row">
+                <a href="`/cadastrar-inscricoes`">
+                <button
+                  type="button"
+                  className="btn btn-success"
+                >
+                  Inscrever equipe
+                </button>
+                </a>
+
+                <a href="`/listagem-inscricoes`">
+                <button
+                  type="button"
+                  className="btn btn-success"
+                >
+                  Ver equipes participantes
+                </button>
+                </a>
+
+                <a href="`/estatisticas`">
+                <button
+                  type="button"
+                  className="btn btn-success"
+                >
+                  Estatísticas da competição
+                </button>
+                </a>
+              </Stack>
 
               
             </div>
