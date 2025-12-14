@@ -56,3 +56,9 @@ label.form-check-label {
   text-align: center;
   padding: 30px;
 }
+
+.botao-logout {
+    background: none;
+    border: none;
+    color: white;
+}

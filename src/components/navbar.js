@@ -1,10 +1,16 @@
-import React from 'react';
 import 'bootswatch/dist/flatly/bootstrap.css';
 import './../ajustes.css'
 import NavbarItem from './navbarItem';
-import { HouseIcon } from 'lucide-react';
+import { HouseIcon, LogIn, LogOut } from 'lucide-react';
 
 function Navbar(props) {
+  const usuarioLogado = localStorage.getItem('usuario_logado');
+
+  function logout() {
+  localStorage.removeItem('usuario_logado');
+  window.location.href = '/login';
+}
+
   return (
     <div className='navbar navbar-expand-lg fixed-top navbar-dark bg-primary'>
       <div className='container'>
@@ -58,40 +64,31 @@ function Navbar(props) {
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/estatisticas' label='Estatisticas' />
           </ul>
-        
-{/*
-          <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-escalacoes' label='Escalacoes' />
-          </ul>
-
-          <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-cartoes' label='Cartoes' />
-          </ul>
-
-          <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-gols' label='Gols' />
-          </ul>
-
-          <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-assistencias' label='Assistencias' />
-          </ul>
-
-          <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-partidas' label='Partidas' />
-          </ul>
-
-          <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-rodadas' label='Rodadas' />
-          </ul>
-          <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/listagem-resultados' label='Resultados' />
-          </ul>
-*/}
-          <ul className='navbar-nav'>
-            <NavbarItem render='true' href='/login' label='Entrar' />
+          {/* <ul className='navbar-nav'>
+            <NavbarItem render='true' href='/login' label={<LogIn />} />
           </ul>
           <ul className='navbar-nav'>
             <NavbarItem render='true' href='/' label='Sair' />
+          </ul> */}
+          <ul className='navbar-nav ms-auto'>
+            {!usuarioLogado && (
+              <NavbarItem
+                render='true'
+                href='/login'
+                label={<LogIn />}
+                
+              />
+            )}
+
+            {usuarioLogado && (
+              <li className='nav-item'>
+                <button className='botao-logout'
+                  onClick={logout}
+                >
+                  <LogOut />
+                </button>
+              </li>
+            )}
           </ul>
         </div>
       </div>

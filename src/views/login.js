@@ -16,8 +16,12 @@ class Login extends React.Component {
   };
 
   logar = () => {
-    mensagemSucesso(`Usuário ${this.state.login} logado com sucesso!`);
-  };
+  localStorage.setItem('usuario_logado', this.state.login);
+
+  mensagemSucesso(`Usuário ${this.state.login} logado com sucesso!`);
+
+  window.location.href = '/home';
+};
 
   cancelar = () => {
     this.setState({
