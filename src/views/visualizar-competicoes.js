@@ -273,6 +273,15 @@ function VisualizarCompeticoes() {
                   Estatísticas da competição
                 </button>
                 </a>
+
+                <a href="/listagem-partidas">
+                <button
+                  type="button"
+                  className="btn btn-success"
+                >
+                  Ver partidas
+                </button>
+                </a>
               </Stack>
 
               

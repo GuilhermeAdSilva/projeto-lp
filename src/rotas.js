@@ -39,10 +39,18 @@ import CadastroTorneios from './views/cadastro-torneios'
 import VisualizarTorneios from './views/visualizar-torneios';
 
 import ListagemEscalacoes from './views/listagem-escalacoes';
+
 import CadastroGols from './views/cadastro-gols';
 import ListagemGols from './views/listagem-gols';
+
 import ListagemPartidas from './views/listagem-partidas';
+import CadastroPartidas from './views/cadastro-partidas';
+import VisualizarPartidas from './views/visualizar-partidas';
+
+
 import ListagemResultados from './views/listagem-resultados';
+
+
 import ListagemRodadas from './views/listagem-rodadas';
 
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
@@ -54,6 +62,7 @@ import ListagemAmarelos from './views/listagem-cartoes-amarelos';
 import CadastroAmarelos from './views/cadastro-cartoes-amarelos';
 import ListagemVermelhos from './views/listagem-cartoes-vermelhos';
 import CadastroVermelhos from './views/cadastro-cartoes-vermelhos';
+
 
 function Rotas() {
   return (
@@ -123,7 +132,11 @@ function Rotas() {
         <Route path="/cadastro-cartoes-vermelhos/:idParam?" element={<CadastroVermelhos />} />
 
         <Route path="/listagem-escalacoes" element={<ListagemEscalacoes />} />
+
         <Route path="/listagem-partidas" element={<ListagemPartidas />} />
+        <Route path="/cadastro-partidas" element={<CadastroPartidas />} />
+        <Route path="/visualizar-partidas" element={<VisualizarPartidas />} />
+
         <Route path="/listagem-resultados" element={<ListagemResultados />} />
         <Route path="/listagem-rodadas" element={<ListagemRodadas />} />
 

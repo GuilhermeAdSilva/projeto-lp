@@ -22,11 +22,11 @@ function ListagemPartidas() {
   const navigate = useNavigate();
 
   const cadastrar = () => {
-    navigate(`/cadastro-cursos`);
+    navigate(`/cadastro-partidas`);
   };
 
   const editar = (id) => {
-    navigate(`/cadastro-cursos/${id}`);
+    navigate(`/cadastro-partidas/${id}`);
   };
 
   const [dados, setDados] = React.useState(null);
@@ -76,18 +76,18 @@ function ListagemPartidas() {
               <table className='table table-hover'>
                 <thead>
                   <tr>
-                    <th scope='col'>ID Competição</th>
-                    <th scope='col'>ID Time Mandante</th>
-                    <th scope='col'>ID Time Visitante</th>
+                    <th scope='col'>Nome Competição</th>
+                    <th scope='col'>Nome Time Mandante</th>
+                    <th scope='col'>Nome Time Visitante</th>
                     <th scope='col'>Ações</th>
                   </tr>
                 </thead>
                 <tbody>
                   {dados.map((dado) => (
                     <tr key={dado.id}>
-                      <td>{dado.id}</td>
-                      <td>{dado.idAssociacaoMandante}</td>
-                      <td>{dado.idAssociacaoVisitante}</td>
+                      <td>{dado.nomeEdicaoTorneio}</td>
+                      <td>{dado.nomeAssociacaoMandante}</td>
+                      <td>{dado.nomeAssociacaoVisitante}</td>
                       <td>
                         <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton
