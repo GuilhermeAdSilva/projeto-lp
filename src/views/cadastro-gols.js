@@ -15,12 +15,12 @@ import { BASE_URL4 } from '../config/axios';
 import { BASE_URL } from '../config/axios';
 import { BASE_URL2 } from '../config/axios';
 
-function CadastroAssistencias() {
+function CadastroGols() {
   const { idParam } = useParams();
 
   const navigate = useNavigate();
 
-  const baseURL = `${BASE_URL4}/assistencias`;
+  const baseURL = `${BASE_URL4}/gols`;
 
   const [id, setId] = useState('');
   const [idJogador, setIdJogador] = useState(0);
@@ -51,8 +51,8 @@ function CadastroAssistencias() {
           headers: { 'Content-Type': 'application/json' },
         })
         .then(function (response) {
-          mensagemSucesso(`Assistencia cadastrada com sucesso!`);
-          navigate(`/listagem-assistencias`);
+          mensagemSucesso(`Gol cadastrado com sucesso!`);
+          navigate(`/listagem-gols`);
         })
         .catch(function (error) {
           mensagemErro(error.response.data);
@@ -63,8 +63,8 @@ function CadastroAssistencias() {
           headers: { 'Content-Type': 'application/json' },
         })
         .then(function (response) {
-          mensagemSucesso(`Assistencia alterada com sucesso!`);
-          navigate(`/listagem-assistencias`);
+          mensagemSucesso(`Gol alterado com sucesso!`);
+          navigate(`/listagem-gols`);
         })
         .catch(function (error) {
           mensagemErro(error.response.data);
@@ -109,7 +109,7 @@ function CadastroAssistencias() {
 
   return (
     <div className='container'>
-      <Card title='Cadastro de Assistencia'>
+      <Card title='Cadastro de Gol'>
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
@@ -150,7 +150,7 @@ function CadastroAssistencias() {
                   ))}
                 </select>
               </FormGroup>
-              
+
               <Stack spacing={1} padding={1} direction='row'>
                 <button
                   onClick={salvar}
@@ -175,4 +175,4 @@ function CadastroAssistencias() {
   );
 }
 
-export default CadastroAssistencias;
+export default CadastroGols;

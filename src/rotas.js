@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Home from './views/home';
 
 import ListagemArbitros from './views/listagem-arbitros';
@@ -39,37 +37,27 @@ import ListagemTorneios from './views/listagem-torneios';
 import CadastroTorneios from './views/cadastro-torneios'
 import VisualizarTorneios from './views/visualizar-torneios';
 
-import ListagemCartoes from './views/listagem-cartoes';
 import ListagemEscalacoes from './views/listagem-escalacoes';
+import CadastroGols from './views/cadastro-gols';
 import ListagemGols from './views/listagem-gols';
 import ListagemPartidas from './views/listagem-partidas';
 import ListagemResultados from './views/listagem-resultados';
 import ListagemRodadas from './views/listagem-rodadas';
-
-
-/*
-import CadastroUsuario from './views/cadastro-usuario';
-import CadastroCurso from './views/cadastro-curso';
-import CadastroProfessor from './views/cadastro-professor';
-import CadastroAluno from './views/cadastro-aluno';
-import CadastroCategoria from './views/cadastro-categoria';
-import CadastroAtividadeComplementar from './views/cadastro-atividade-complementar';
-*/
 
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 import Estatisticas from './views/estatisticas';
 import ListagemAssistencias from './views/listagem-assistencias';
 import CadastroAssistencias from './views/cadastro-assistencias';
-
-import Navbar from './components/navbar';
+import ListagemAmarelos from './views/listagem-cartoes-amarelos';
+import CadastroAmarelos from './views/cadastro-cartoes-amarelos';
+import ListagemVermelhos from './views/listagem-cartoes-vermelhos';
+import CadastroVermelhos from './views/cadastro-cartoes-vermelhos';
 
 function Rotas() {
   return (
     <BrowserRouter>
       <Routes>
-
-        {/* PÁGINA INICIAL */}
         <Route
           path="/"
           element={
@@ -79,7 +67,6 @@ function Rotas() {
           }
         />
 
-        {/* ROTAS NORMAIS */}
         <Route path="/home" element={<Home />} />
 
         <Route path="/listagem-arbitros" element={<ListagemArbitros />} />
@@ -124,9 +111,16 @@ function Rotas() {
         <Route path="/listagem-assistencias" element={<ListagemAssistencias />} />
         <Route path="/cadastro-assistencias/:idParam?" element={<CadastroAssistencias />} />
 
-        <Route path="/listagem-cartoes" element={<ListagemCartoes />} />
-        <Route path="/listagem-escalacoes" element={<ListagemEscalacoes />} />
         <Route path="/listagem-gols" element={<ListagemGols />} />
+        <Route path="/cadastro-gols/:idParam?" element={<CadastroGols />} />
+
+        <Route path="/listagem-cartoes-amarelos" element={<ListagemAmarelos />} />
+        <Route path="/cadastro-cartoes-amarelos/:idParam?" element={<CadastroAmarelos />} />
+
+        <Route path="/listagem-cartoes-vermelhos" element={<ListagemVermelhos />} />
+        <Route path="/cadastro-cartoes-vermelhos/:idParam?" element={<CadastroVermelhos />} />
+
+        <Route path="/listagem-escalacoes" element={<ListagemEscalacoes />} />
         <Route path="/listagem-partidas" element={<ListagemPartidas />} />
         <Route path="/listagem-resultados" element={<ListagemResultados />} />
         <Route path="/listagem-rodadas" element={<ListagemRodadas />} />

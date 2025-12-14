@@ -29,7 +29,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className='container'>
-        <div className='col-lg-4'>
+        <div className='col-lg-7'>
           <Card title='Acesso'>
             <div className='row'>
               <div className='bs-component'>

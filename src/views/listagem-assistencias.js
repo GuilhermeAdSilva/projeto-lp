@@ -14,13 +14,13 @@ import EditIcon from '@mui/icons-material/Edit';
 
 import axios from 'axios';
 import { BASE_URL4 } from '../config/axios';
+import { Underline } from 'lucide-react';
 
 const baseURL = `${BASE_URL4}/assistencias`;
 
 function ListagemAssistencias() {
   const navigate = useNavigate();
 
-  // ===== STATES =====
   const [dados, setDados] = React.useState([]);
   const [dadosOriginais, setDadosOriginais] = React.useState([]);
   const [competicaoSelecionada, setCompeticaoSelecionada] = React.useState(null);
@@ -29,7 +29,6 @@ function ListagemAssistencias() {
   const [tipoBusca, setTipoBusca] = React.useState('jogador');
   const [termoBusca, setTermoBusca] = React.useState('');
 
-  // ===== NAVEGAÇÃO =====
   const cadastrar = () => {
     navigate('/cadastro-assistencias');
   };
@@ -38,7 +37,6 @@ function ListagemAssistencias() {
     navigate(`/cadastro-assistencias/${id}`);
   };
 
-  // ===== GERAR RANKING =====
   function gerarRanking(nomeCompeticao) {
     const assistenciasDaCompeticao = dadosOriginais.filter(
       (dado) => dado.nomeCompeticao === nomeCompeticao
@@ -67,7 +65,6 @@ function ListagemAssistencias() {
     setRanking(rankingOrdenado);
   }
 
-  // ===== FILTRO POR COMPETIÇÃO (CLICK) =====
   function handleClickEst(nomeCompeticao) {
     if (competicaoSelecionada === nomeCompeticao) {
       limparFiltros();
@@ -83,11 +80,9 @@ function ListagemAssistencias() {
     gerarRanking(nomeCompeticao);
   }
 
-  // ===== BARRA DE PESQUISA =====
   function aplicarBusca(valor, tipo) {
     let lista = [...dadosOriginais];
 
-    // Se houver competição selecionada
     if (competicaoSelecionada) {
       lista = lista.filter(
         (dado) => dado.nomeCompeticao === competicaoSelecionada
@@ -121,7 +116,6 @@ function ListagemAssistencias() {
     setTermoBusca('');
   }
 
-  // ===== EXCLUIR =====
   async function excluir(id) {
     try {
       await axios.delete(`${baseURL}/${id}`);
@@ -137,7 +131,6 @@ function ListagemAssistencias() {
     }
   }
 
-  // ===== BUSCA INICIAL =====
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
       setDados(response.data);
@@ -151,7 +144,6 @@ function ListagemAssistencias() {
         <div className="row">
           <div className="col-lg-12">
 
-            {/* ===== BARRA DE PESQUISA ===== */}
             <div className="row mb-3">
               <div className="col-md-3">
                 <select
@@ -190,7 +182,6 @@ function ListagemAssistencias() {
               </div>
             </div>
 
-            {/* ===== BOTÕES ===== */}
             <button
               type="button"
               className="btn btn-warning mb-3"
@@ -199,7 +190,6 @@ function ListagemAssistencias() {
               Nova Assistência
             </button>
 
-            {/* ===== TABELA ===== */}
             <table className="table table-hover">
               <thead>
                 <tr>
@@ -215,6 +205,7 @@ function ListagemAssistencias() {
                     <td
                       style={{
                         cursor: 'pointer',
+                        textDecoration: 'underline',
                         fontWeight:
                           competicaoSelecionada === dado.nomeCompeticao
                             ? 'bold'
@@ -241,7 +232,6 @@ function ListagemAssistencias() {
               </tbody>
             </table>
 
-            {/* ===== RANKING ===== */}
             {competicaoSelecionada && ranking.length > 0 && (
               <div className="mt-5">
                 <h4>
