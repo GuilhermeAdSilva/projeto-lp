@@ -12,7 +12,6 @@ import "../custom.css";
 
 import axios from "axios";
 import { BASE_URL2 } from "../config/axios";
-import { BASE_URL3 } from "../config/axios";
 
 
 
@@ -248,7 +247,7 @@ function VisualizarCompeticoes() {
               </FormGroup>
 
               <Stack spacing={1} padding={1} direction="row">
-                <a href="`/cadastrar-inscricoes`">
+                <a href="/cadastro-inscricoes">
                 <button
                   type="button"
                   className="btn btn-success"
@@ -257,7 +256,7 @@ function VisualizarCompeticoes() {
                 </button>
                 </a>
 
-                <a href="`/listagem-inscricoes`">
+                <a href="/listagem-inscricoes">
                 <button
                   type="button"
                   className="btn btn-success"
@@ -266,7 +265,7 @@ function VisualizarCompeticoes() {
                 </button>
                 </a>
 
-                <a href="`/estatisticas`">
+                <a href="/estatisticas">
                 <button
                   type="button"
                   className="btn btn-success"
