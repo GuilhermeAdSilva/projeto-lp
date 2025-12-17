@@ -89,7 +89,7 @@ function ListagemEquipes() {
                     <tr key={dado.id}>
                       <td><a href= {`/visualizar-equipes/${dado.id}`}>{dado.nome}</a></td>
                       <td><a href= {`/listagem-jogadores-equipe/${dado.id}`}>Ver Jogadores</a></td>
-                      <td><a href={`/cadastro-jogadores-equipe/`}><UserPlus /></a></td>
+                      <td><a href={`/cadastro-jogadores-equipe/${dado.id}`}><UserPlus /></a></td>
                       <td>
                         <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton
