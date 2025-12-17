@@ -2,6 +2,8 @@ import React from 'react';
 
 import Card from '../components/card';
 
+import { UserPlus } from 'lucide-react';
+
 import { mensagemSucesso, mensagemErro } from '../components/toastr';
 
 import '../custom.css';
@@ -77,6 +79,8 @@ function ListagemEquipes() {
                 <thead>
                   <tr>
                     <th scope='col'>Nome</th>
+                    <th scope='col'>Jogadores</th>
+                    <th scope='col'>Adicionar jogador</th>
                     <th scope='col'>Ações</th>
                   </tr>
                 </thead>
@@ -84,6 +88,8 @@ function ListagemEquipes() {
                   {dados.map((dado) => (
                     <tr key={dado.id}>
                       <td><a href= {`/visualizar-equipes/${dado.id}`}>{dado.nome}</a></td>
+                      <td><a href= {`/listagem-jogadores-equipe/${dado.id}`}>Ver Jogadores</a></td>
+                      <td><a href={`/cadastro-jogadores-equipe/`}><UserPlus /></a></td>
                       <td>
                         <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton
