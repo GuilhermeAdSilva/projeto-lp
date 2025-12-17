@@ -28,7 +28,7 @@ function ListagemPartidas() {
   };
 
   const editar = (id) => {
-    navigate(`/cadastro-partidas/${id}`);
+    navigate(`/cadastro-resultados/${id}`);
   };
 
   const [dados, setDados] = React.useState(null);

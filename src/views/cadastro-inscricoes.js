@@ -139,7 +139,6 @@ function CadastroInscricoes() {
                   name='idEdicaoTorneio'
                   value={idEdicaoTorneio}
                   onChange={(e) => setIdEdicaoTorneio(e.target.value)}
-                  disabled
                 >
                   <option key='0' value='0'>
                     {' '}

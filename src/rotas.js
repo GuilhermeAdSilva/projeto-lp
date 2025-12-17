@@ -147,7 +147,7 @@ function Rotas() {
         <Route path="/listagem-jogadores-equipe/:idEquipe" element={<ListagemJogadoresEquipe />} />
         <Route path="/cadastro-jogadores-equipe/:idEquipe" element={<CadastrojogadoresEquipe />} />
 
-        <Route path="/cadastro-resultados" element={<CadastroResultados />} />
+        <Route path="/cadastro-resultados/:idParam?" element={<CadastroResultados />} />
 
       </Routes>
     </BrowserRouter>

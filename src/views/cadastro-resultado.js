@@ -59,7 +59,7 @@ function CadastroResultados() {
         })
         .then(function (response) {
           mensagemSucesso(`Resultado alterado com sucesso!`);
-          navigate(`/listagem-resultados`);
+          navigate(`/cadastro-resultado`);
         })
         .catch(function (error) {
           mensagemErro(error.response.data);
