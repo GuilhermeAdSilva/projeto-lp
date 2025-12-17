@@ -4,6 +4,8 @@ import Card from '../components/card';
 
 import { mensagemSucesso, mensagemErro } from '../components/toastr';
 
+import { Plus } from 'lucide-react';
+
 import '../custom.css';
 
 import { useNavigate } from 'react-router-dom';
@@ -79,6 +81,7 @@ function ListagemPartidas() {
                     <th scope='col'>Nome Competição</th>
                     <th scope='col'>Nome Time Mandante</th>
                     <th scope='col'>Nome Time Visitante</th>
+                    <th scope='col'>Adicionar Resultado</th>
                     <th scope='col'>Ações</th>
                   </tr>
                 </thead>
@@ -88,6 +91,7 @@ function ListagemPartidas() {
                       <td>{dado.nomeEdicaoTorneio}</td>
                       <td>{dado.nomeAssociacaoMandante}</td>
                       <td>{dado.nomeAssociacaoVisitante}</td>
+                      <td><a href="cadastro-resultados"><Plus /></a></td>
                       <td>
                         <Stack spacing={1} padding={0} direction='row' justifyContent={'center'}>
                           <IconButton

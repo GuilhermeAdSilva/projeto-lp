@@ -65,6 +65,7 @@ import CadastroVermelhos from './views/cadastro-cartoes-vermelhos';
 
 import ListagemJogadoresEquipe from './views/listagem-jogadores-equipe';
 import CadastrojogadoresEquipe from './views/cadastro-jogadores-equipe';
+import CadastroResultados from './views/cadastro-resultado';
 
 
 function Rotas() {
@@ -145,6 +146,8 @@ function Rotas() {
 
         <Route path="/listagem-jogadores-equipe/:idEquipe" element={<ListagemJogadoresEquipe />} />
         <Route path="/cadastro-jogadores-equipe/:idEquipe" element={<CadastrojogadoresEquipe />} />
+
+        <Route path="/cadastro-resultados" element={<CadastroResultados />} />
 
       </Routes>
     </BrowserRouter>
