@@ -255,18 +255,7 @@ function CadastroCompeticoes() {
                   ))}
                 </select>
               </FormGroup>
-
-              <FormGroup label="Quantidade de Equipes participantes: " htmlFor="inputQuantidadeEquipes">
-                <input
-                  type="radio"
-                  id="inputQuantidadeEquipes"
-                  value={quantidadeEquipes}
-                  className="form-control"
-                  name="quantidadeEquipes"
-                  onChange={(e) => setQuantidadeEquipes(e.target.value)}
-                />
-              </FormGroup>
-
+              
               <Stack spacing={1} padding={1} direction="row">
                 <button
                   onClick={salvar}

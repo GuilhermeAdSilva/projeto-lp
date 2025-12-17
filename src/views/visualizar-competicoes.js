@@ -92,9 +92,7 @@ function VisualizarCompeticoes() {
 
   if (!dados) return null;
 
-  function handleSearch(text) {
-        console.log("Buscando por:", text);
-    }
+
 
   return (
     <div className="container">
@@ -102,7 +100,6 @@ function VisualizarCompeticoes() {
         <div className="row">
           <div className="col-lg-12">
             <div className="bs-component">
-              <SearchBar onSearch={handleSearch} />
               <FormGroup label="Nome da Edição: *" htmlFor="inputNome">
                 <input
                   type="text"
@@ -235,19 +232,21 @@ function VisualizarCompeticoes() {
                 </select>
               </FormGroup>
 
+              
               <FormGroup label="Quantidade de Equipes participantes: " htmlFor="inputQuantidadeEquipes">
                 <input
-                  type="radio"
+                  type="text"
                   id="inputQuantidadeEquipes"
-                  value={quantidadeEquipes}
+                  value={ "3/16"}
                   className="form-control"
                   name="quantidadeEquipes"
                   onChange={(e) => setQuantidadeEquipes(e.target.value)}
+                  disabled
                 />
               </FormGroup>
 
               <Stack spacing={1} padding={1} direction="row">
-                <a href="/cadastro-inscricoes">
+                <a  href={`/cadastro-inscricoes/`}>
                 <button
                   type="button"
                   className="btn btn-success"
@@ -255,6 +254,7 @@ function VisualizarCompeticoes() {
                   Inscrever equipe
                 </button>
                 </a>
+  
 
                 <a href="/listagem-inscricoes">
                 <button
